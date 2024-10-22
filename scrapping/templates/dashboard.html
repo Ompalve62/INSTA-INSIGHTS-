@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Dashboard</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <nav class="col-md-2 bg-primary sidebar p-0">
+                <div class="sidebar-sticky">
+                    <div class="sidebar-header text-center py-4 bg-dark text-white">
+                        <img src="logo.png" alt="Logo" class="img-fluid rounded-circle" width="70">
+                        <h5 class="mt-2">Dashboard</h5>
+                    </div>
+                    <ul class="nav flex-column mt-3">
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#"><i class="fas fa-user"></i> Profile</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#"><i class="fas fa-users"></i> Influencers</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#"><i class="fas fa-bullhorn"></i> Campaign</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#"><i class="fas fa-file-alt"></i> Reports</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#"><i class="fas fa-cogs"></i> Settings</a>
+                        </li>
+                        <li class="nav-item mt-auto">
+                            <a class="nav-link text-white" href="#"><i class="fas fa-question-circle"></i> FAQ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <!-- Main Content -->
+            <main class="col-md-10 ml-sm-auto col-lg-10 px-md-4">
+                <div class="dashboard-header pt-3 pb-3 mb-3 bg-light text-center shadow-sm">
+                    <h1>Welcome to XYZ Dashboard</h1>
+                    <button class="btn btn-primary mt-2">Get Started</button>
+                </div>
+
+                <!-- Influencer Section -->
+                <section class="influencer-section text-center mb-4">
+                    <h4 class="text-secondary">Watch Influencer Story</h4>
+                    <div class="d-flex justify-content-center mt-3">
+                        <div class="influencer-img mx-2">
+                            <img src="influencer1.jpg" class="rounded-circle shadow" alt="Influencer 1" width="80">
+                        </div>
+                        <div class="influencer-img mx-2">
+                            <img src="influencer2.jpg" class="rounded-circle shadow" alt="Influencer 2" width="80">
+                        </div>
+                        <div class="influencer-img mx-2">
+                            <img src="influencer3.jpg" class="rounded-circle shadow" alt="Influencer 3" width="80">
+                        </div>
+                        <button class="btn btn-outline-secondary ml-3">30+ More</button>
+                    </div>
+                </section>
+
+                <!-- Stats Section -->
+                <section class="stats-section mb-4">
+                    <div class="row text-center">
+                        <div class="col-md-4">
+                            <div class="card shadow-sm">
+                                <div class="card-body bg-gradient-primary text-white">
+                                    <h5>Posts</h5>
+                                    <h2>750</h2>
+                                    <small>125 more to come</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card shadow-sm">
+                                <div class="card-body bg-gradient-secondary text-white">
+                                    <h5>Total Reach</h5>
+                                    <h2>234k</h2>
+                                    <small>936k estimated</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card shadow-sm">
+                                <div class="card-body bg-gradient-success text-white">
+                                    <h5>Engagement</h5>
+                                    <h2>9.5k</h2>
+                                    <small>10.5k estimated</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Budget Section -->
+                <section class="budget-section text-center mt-4">
+                    <h5 class="text-secondary">Budget Overview</h5>
+                    <p class="mb-0">229,000 USD spent</p>
+                    <p>56% of 450,000 planned budget</p>
+                    <button class="btn btn-outline-primary">Change settings</button>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <!-- FontAwesome Icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</body>
+</html>
+<style>
+    /* General Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+/* Sidebar Styling */
+.sidebar {
+    height: 100vh;
+    background-color: #343a40;
+}
+
+.sidebar .nav-link {
+    font-size: 16px;
+    padding: 15px;
+    color: #fff;
+}
+
+.sidebar .nav-link:hover {
+    background-color: #007bff;
+    border-radius: 5px;
+}
+
+/* Header Styling */
+.dashboard-header {
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 10px;
+}
+
+.dashboard-header h1 {
+    font-weight: 600;
+}
+
+/* Influencer Section Styling */
+.influencer-section {
+    background-color: #eaf2ff;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.influencer-section img {
+    transition: transform 0.3s ease;
+}
+
+.influencer-section img:hover {
+    transform: scale(1.1);
+}
+
+/* Stats Section */
+.card {
+    border: none;
+}
+
+.bg-gradient-primary {
+    background: linear-gradient(45deg, #007bff, #6ec1ff);
+}
+
+.bg-gradient-secondary {
+    background: linear-gradient(45deg, #6c757d, #b6b9bc);
+}
+
+.bg-gradient-success {
+    background: linear-gradient(45deg, #28a745, #6adf81);
+}
+
+/* Budget Section */
+.budget-section {
+    background-color: #f1f3f5;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+</style>
