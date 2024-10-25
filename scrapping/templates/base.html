@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} Dashboard {% endblock %}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        /* Sidebar Styling */
+        .sidebar {
+            height: 100vh;
+            background-color: #ffffff;
+        }
+
+        .sidebar .nav-link {
+            font-size: 16px;
+            padding: 15px;
+            color: #ffffff;
+            background-color: #C02C08;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        .sidebar .nav-link:hover {
+            background-color: #c82333;
+        }
+
+        .sidebar-header {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .sidebar-header img {
+            border-radius: 50%;
+        }
+
+        /* Main Content Styling */
+        .main-content {
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+
+        .dashboard-header {
+            background: #C02C08;
+            color: #fff;
+            border-radius: 10px;
+            text-align: center;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        /* Flexbox layout to center content */
+        .content-center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <nav class="col-md-2 sidebar">
+                <div class="sidebar-header">
+                    <img src="https://s3-alpha-sig.figma.com/img/1956/a201/e1a1cf56ef437ee13ea1e7bb5a245a24?Expires=1730678400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=ReQ9-yjYQUxIoSUg~qqyuLKc81MjxCjrmBn3lcjh6CAJgIDDH4OKsEaiozFG1SOG~38NdeYZXbRNXyJdf25JdVoPJ1XY81sLtiytMJNGKC88pDPTu-WwSj9dTnhUOTruToYWlMVqqNHik3wCDPVSbt7UkPzAqmFCuF8WZBjPhRD2pxJ1yzqDxgCSkxtL-Ag8Cjl2nNDVvhddGH7LiyC4YRzF~JB0z-PmtoezPGiTFOHr-R47Imrh6HhZG0be85hLrEsGdyN6CJjObWmtOBzRERp902b8jtp1USSQJGH-hmVR1evlXdhGS8mz9pojK-9x8w2GVglNm615MAUmJdc24A__" alt="Logo" width="80">
+                    <h5>DigitalDose</h5>
+                </div>
+                <ul class="nav flex-column mt-3">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fas fa-user"></i> Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fas fa-users"></i> Influencers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fas fa-bullhorn"></i> Campaign</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fas fa-file-alt"></i> Reports</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fas fa-cogs"></i> Settings</a>
+                    </li>
+                    <li class="nav-item mt-auto">
+                        <a class="nav-link" href="#"><i class="fas fa-question-circle"></i> FAQ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Main Content Area -->
+            <main class="col-md-10 main-content">
+                <div class="dashboard-header">
+                    <h1>{% block header %} Dashboard Header {% endblock %}</h1>
+                </div>
+
+                <div class="content-center">
+                    <!-- Block for custom content in each page -->
+                    {% block content %}
+                    {% endblock %}
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and Icons -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</body>
+
+</html>
