@@ -254,12 +254,47 @@ input[type="text"] {
 .tag:hover {
     background-color: #FF4500;
     color: white;
+    
 }
 
 .search-icon {
     font-size: 16px;
     margin-left: 5px;
 }
+
+.grid-section {
+    margin-top: 20px;
+    background-color: #f5f7fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.boxes{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    /* padding: 50px; */
+    width: 60%;
+    column-gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.box{
+    border: 1px solid #ccc; 
+    justify-content: center;
+    background-color: white;
+    height: 100px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    /* cursor: pointer; */
+}
+
+
     </style>
 </head>
 
@@ -309,22 +344,7 @@ input[type="text"] {
                     <!-- <button class="btn btn-gradient mt-2">Get Started</button> -->
                 </div>
 
-                <!-- Influencer Section -->
-                <!-- <section class="influencer-section text-center mb-4">
-                    <h4 class="text-secondary">Watch Influencer Story</h4>
-                    <div class="d-flex justify-content-center mt-3">
-                        <div class="influencer-img mx-2">
-                            <img src="influencer1.jpg" class="rounded-circle shadow" alt="Influencer 1" width="80">
-                        </div>
-                        <div class="influencer-img mx-2">
-                            <img src="influencer2.jpg" class="rounded-circle shadow" alt="Influencer 2" width="80">
-                        </div>
-                        <div class="influencer-img mx-2">
-                            <img src="influencer3.jpg" class="rounded-circle shadow" alt="Influencer 3" width="80">
-                        </div>
-                        <button class="btn btn-outline-secondary ml-3">30+ More</button>
-                    </div>
-                </section> -->
+                
 
                 <div class="container">
                     <h1>
@@ -381,13 +401,42 @@ input[type="text"] {
                             <span class="tag">Automobile</span>
                             <span class="tag">#beauty</span>
                             <span class="tag">Automobile</span>
-                            
-
-                            
-                            
-                            
+                        
                         </div>
                     </div>
+
+                </div>
+
+                <!-- Influencer Section 
+                <section class="influencer-section text-center mb-4">
+                    <h4 class="text-secondary">Watch Influencer Story</h4>
+                    <div class="d-flex justify-content-center mt-3">
+                        <div class="influencer-img mx-2">
+                            <img src="influencer1.jpg" class="rounded-circle shadow" alt="Influencer 1" width="80">
+                        </div>
+                        <div class="influencer-img mx-2">
+                            <img src="influencer2.jpg" class="rounded-circle shadow" alt="Influencer 2" width="80">
+                        </div>
+                        <div class="influencer-img mx-2">
+                            <img src="influencer3.jpg" class="rounded-circle shadow" alt="Influencer 3" width="80">
+                        </div>
+                        <button class="btn btn-outline-secondary ml-3">30+ More</button>
+                    </div>
+                </section> -->
+
+                <!-- boxes -->
+                 <div class="grid-section">
+                 <section class="boxes">
+                    <div class="box">
+                        x
+                    </div>
+                    <div class="box">
+                        y
+                    </div>
+                    <div class="box">
+                        z
+                    </div>
+                 </section>
                 </div>
         </div>
     </div>
