@@ -1,0 +1,287 @@
+{% extends 'base.html' %}
+
+{% block title %}instagram Influencer Marketing Campaign Dashboard{% endblock %}
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: white;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            margin: 0;
+        }
+        h1 {
+            color: #003366;
+        }
+        .dashboard-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            width: 80%;
+            max-width: 1000px;
+        }
+        .card {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+        }
+        .title {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #003366;
+            margin-bottom: 10px;
+        }
+        .value {
+            font-size: 2em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .progress-bar {
+            background-color:#f0f0f0;
+            border-radius: 5px;
+            overflow: hidden;
+            height: 10px;
+            width: 70%;
+            margin: 10px auto;
+        }
+        .progress {
+            background-color: #c02c08;
+            width: 75%;
+            height: 100%;
+        }
+        .engagement-rate {
+            background-color:#c02c08;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 1.5em;
+        }
+        .chart-container {
+            height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5em;
+            color:#006699;
+            border-radius: 5px;
+            font-weight: bold;
+            background-color: #e6f7ff;
+            padding: 10px;
+        }
+        .chart-container canvas {
+            max-width: 100%;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #c02c08;     
+            color: white; 
+            font-weight: bold;
+        }
+        tr:hover {
+            background-color: #f9f9f9;
+        }
+        img.profile-pic {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        a {
+            color: #4a90e2;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .verified {
+            color: #4a90e2;
+            font-size: 1rem;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+
+{% block content %}
+<body>
+    <h1>Instagram Influencer Marketing Campaign Dashboard</h1>
+    <p>This dashboard tracks key metrics to measure the progress of an Instagram influencer marketing campaign.</p>
+
+    <div class="dashboard-container">
+        <div class="card">
+            <div class="title">Instagram</div>
+            <div class="value">121.5K</div>
+            <div class="progress-bar">
+                <div class="progress"></div>
+            </div>
+            <div>$151K Goal</div>
+        </div>
+
+        <div class="card">
+            <div class="title">Latest Post Performance</div>
+            <div class="value">40K Impressions</div>
+            <div>1,700 Likes</div>
+            <div>216 Comments</div>
+            <div class="engagement-rate">4.12% Engagement Rate</div>
+        </div>
+
+        <div class="card">
+            <div class="title">Website Traffic from Instagram (this month)</div>
+            <div class="value">213.7K Sessions</div>
+            <div>34% vs last month</div>
+            <div class="chart-container">
+                <canvas id="lineChart"></canvas>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="title">Revenue by Promo Code (this month)</div>
+            <div class="chart-container">
+                <canvas id="barChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const lineCtx = document.getElementById('lineChart').getContext('2d');
+        new Chart(lineCtx, {
+            type: 'line',
+            data: {
+                labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+                datasets: [{
+                    label: 'Website Traffic',
+                    data: [50000, 70000, 80000, 90000],
+                    borderColor: '#3399ff',
+                    fill: false,
+                    tension: 0.1
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                },
+                scales: {
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Week'
+                        }
+                    },
+                    y: {
+                        title: {
+                            display: true,
+                            text: 'Sessions'
+                        }
+                    }
+                }
+            }
+        });
+
+        const barCtx = document.getElementById('barChart').getContext('2d');
+        new Chart(barCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Code A', 'Code B', 'Code C', 'Code D'],
+                datasets: [{
+                    label: 'Revenue',
+                    data: [40000, 30000, 20000, 50000],
+                    backgroundColor: ['#3399ff', '#66b3ff', '#99ccff', '#cce6ff']
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                },
+                scales: {
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Promo Codes'
+                        }
+                    },
+                    y: {
+                        title: {
+                            display: true,
+                            text: 'Revenue ($)'
+                        },
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+
+    <h1>128.2M Creators Found</h1>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Creator</th>
+                <th>Followers</th>
+                <th>Average Likes</th>
+                <th>Engagement Rate</th>
+                <th>Intent to Buy Product</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><img src="hon.jpeg" alt="Creator" class="profile-pic"> MAKE OUT HILL <span class="verified">✔</span> <a href="https://www.instagram.com/xxxtentacion" target="_blank">@xxxtentacion</a></td>
+                <td>20.8M</td>
+                <td>33.5M</td>
+                <td>160.78%</td>
+                <td>0.76%</td>
+            </tr>
+            <tr>
+                <td><img src="prabhas.jpg" alt="Creator" class="profile-pic"> V <span class="verified">✔</span> <a href="https://www.instagram.com/thv" target="_blank">@thv</a></td>
+                <td>65.9M</td>
+                <td>11.7M</td>
+                <td>17.82%</td>
+                <td>0%</td>
+            </tr>
+            <tr>
+                <td><img src="egg.jpeg" alt="Creator" class="profile-pic"> Just An Egg <span class="verified">✔</span> <a href="https://www.instagram.com/world_record_egg" target="_blank">@world_record_egg</a></td>
+                <td>5.2M</td>
+                <td>11.0M</td>
+                <td>210.98%</td>
+                <td><a href="#">Check</a></td>
+            </tr>
+            <tr>
+                <td><img src="dhoni.jpeg" alt="Creator" class="profile-pic"> M S Dhoni <span class="verified">✔</span> <a href="https://www.instagram.com/mahi7781" target="_blank">@mahi7781</a></td>
+                <td>49.6M</td>
+                <td>9.3M</td>
+                <td>18.77%</td>
+                <td>0.98%</td>
+            </tr>
+            <tr>
+                <td><img src="mo.jpeg" alt="Creator" class="profile-pic">
+                    JIMIN <span class="verified">✔</span> 
+                    <a href="https://www.instagram.com/mahi7781" target="_blank">@j.m</a>
+                </td>
+                <td>53.2M</td>
+                <td>7.7M</td>
+                <td>14.52%</td>
+                <td><a href="#">Check</a></td>
+        </tr>
+    </tbody>
+    </table>
+ </body>
+{% endblock %}

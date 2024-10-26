@@ -338,13 +338,13 @@ input[type="text"] {
                     </div>
                     <ul class="nav flex-column mt-3">
                         <li class="nav-item">
-                            <a class="nav-link active" href="#"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                            <a class="nav-link active" href="{% url 'dashboard' %}"><i class="fas fa-tachometer-alt"></i> Home
                         </li>
                         <li class="nav-item">
                             <a class="nav-link active" href="{% url 'profile' %}"><i class="fas fa-user"></i> Profile</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" href="#"><i class="fas fa-users"></i> Influencers</a>
+                            <a class="nav-link active" href="{% url 'influencers' %}"><i class="fas fa-users"></i> Top Influencers</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link active" href="#"><i class="fas fa-bullhorn"></i> Campaign</a>

@@ -46,3 +46,6 @@ def dash(request):
 
 def profile(request):
     return render(request,'profile.html')
+
+def influencers_dash(request):
+    return render(request,'influencers.html')
