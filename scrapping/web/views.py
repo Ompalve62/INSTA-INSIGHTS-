@@ -42,3 +42,10 @@ def signup(request):
 
 def dash(request):
     return render(request,'dashboard.html')
+
+
+def profile(request):
+    return render(request,'profile.html')
+
+def influencers_dash(request):
+    return render(request,'influencers.html')

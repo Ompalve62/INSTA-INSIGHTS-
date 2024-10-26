@@ -1,0 +1,194 @@
+{% extends 'base.html' %}
+
+{% block title %}Profile Settings{% endblock %}
+
+{% block header %}
+Profile Settings
+{% endblock %}
+
+{% block content %}
+<style>
+   /* General Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa; /* Light gray background for contrast */
+}
+
+/* Sidebar Menu */
+.profile-sidebar {
+    height: 100vh; /* Full height for the sidebar */
+    background-color: #ffffff; /* White background for sidebar */
+    padding: 20px; /* Padding inside the sidebar */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+    border-radius: 0 8px 8px 0; /* Rounded corners on the right side */
+}
+
+/* Sidebar Menu Items */
+.sidebar-menu {
+    list-style: none; /* Remove default list style */
+    padding-left: 0; /* Remove left padding */
+}
+
+.sidebar-menu li {
+    padding: 10px 0; /* Padding for menu items */
+}
+
+.sidebar-menu li a {
+    text-decoration: none; /* Remove underline */
+    color: #343a40; /* Dark gray color for links */
+    display: block; /* Make the link block level */
+}
+
+/* Sidebar Link Hover Effect */
+.sidebar-menu li a:hover {
+    color: #ff007a; /* Change color on hover */
+}
+
+/* Profile Section */
+.profile-section {
+    margin: 20px; /* Margin around the section */
+    padding: 30px; /* Padding inside the section */
+    background-color: #fff; /* White background for profile section */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Section Titles */
+.profile-section h5 {
+    font-weight: bold; /* Bold section titles */
+    margin-bottom: 20px; /* Space below titles */
+}
+
+/* Form Labels */
+.form-label {
+    font-weight: bold; /* Bold labels for emphasis */
+}
+
+/* Input Fields */
+.form-control {
+    border: 1px solid #ced4da; /* Light border for inputs */
+    border-radius: 4px; /* Rounded corners */
+    height: calc(2.25rem + 2px); /* Consistent height */
+}
+
+/* Input Focus Effect */
+.form-control:focus {
+    border-color: #80bdff; /* Blue border on focus */
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); /* Blue shadow on focus */
+}
+
+/* Profile Image Styles */
+.profile-image {
+    display: flex; /* Flexbox for alignment */
+    align-items: center; /* Center align items */
+    justify-content: center; /* Center align content */
+    flex-direction: column; /* Column layout */
+}
+
+.profile-image img {
+    border-radius: 50%; /* Circular profile image */
+    height: 150px; /* Set height */
+    width: 150px; /* Set width */
+    object-fit: cover; /* Cover the image */
+    margin-bottom: 10px; /* Space below image */
+}
+
+/* Save Button Styles */
+.save-btn {
+    background-color: #ff007a; /* Bright button color */
+    color: white; /* White text color */
+    border: none; /* Remove default border */
+    padding: 10px 20px; /* Padding for button */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Transition effect */
+}
+
+/* Save Button Hover Effect */
+.save-btn:hover {
+    background-color: #e6006d; /* Darker color on hover */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .profile-section {
+        padding: 20px; /* Reduce padding for smaller screens */
+    }
+
+    .form-control,
+    .form-select {
+        font-size: 14px; /* Smaller font size */
+    }
+
+    .save-btn {
+        width: 100%; /* Full width for buttons on smaller screens */
+    }
+
+    .profile-image img {
+        height: 120px; /* Smaller image on mobile */
+        width: 120px; /* Smaller image on mobile */
+    }
+}
+
+
+</style>
+<div class="row">
+    <div class="col-md-3 profile-sidebar">
+        <ul class="sidebar-menu">
+            <li><a href="#">General</a></li>
+            <li><a href="#">Account Default</a></li>
+            <li><a href="#">Products & Billing</a></li>
+            <li><a href="#">Communication</a></li>
+            <li><a href="#">Branding</a></li>
+            <li><a href="#">Users</a></li>
+            <li><a href="#">Domains</a></li>
+            <li><a href="#">Change Password</a></li>
+        </ul>
+    </div>
+
+    <div class="col-md-9 col-12">
+        <div class="profile-section">
+            <h5>Basic Info</h5>
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <!-- Name -->
+                <div class="row mb-3">
+                    <div class="col">
+                        <label for="first_name" class="form-label">First Name</label>
+                        <input type="text" class="form-control" id="first_name" name="first_name" value="{{ user.first_name }}" required>
+                    </div>
+                    <div class="col">
+                        <label for="last_name" class="form-label">Last Name</label>
+                        <input type="text" class="form-control" id="last_name" name="last_name" value="{{ user.last_name }}" required>
+                    </div>
+                </div>
+    
+                <!-- Phone Number -->
+                <div class="mb-3">
+                    <label for="phone_number" class="form-label">Phone Number</label>
+                    <input type="text" class="form-control" id="phone_number" name="phone_number" value="{{ user.phone_number }}">
+                </div>
+    
+                <!-- Profile Image -->
+                <div class="profile-image mb-3">
+                    <img src="{{ user.profile_image.url }}" alt="Profile Image">
+                    <input type="file" name="profile_image" class="form-control mt-2">
+                </div>
+    
+                <!-- Platform Language -->
+                <div class="mb-3">
+                    <label for="language" class="form-label">Platform Language</label>
+                    <select class="form-select" id="language" name="language">
+                        <option value="en" {% if user.language == "en" %}selected{% endif %}>English</option>
+                        <option value="es" {% if user.language == "es" %}selected{% endif %}>Spanish</option>
+                    </select>
+                </div>
+    
+                <!-- Save Changes Button -->
+                <button type="submit" class="btn save-btn">Save Changes</button>
+            </form>
+        </div>
+    </div>
+
+
+{% endblock %}
