@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Footer Example</title>
+    <style>
+        /* General body styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f7f7f7;
+        }
+
+        /* Footer styling */
+        footer {
+            width: 100%;
+            padding: 20px;
+            background-color: #e6f1f8;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: #666;
+            font-size: 14px;
+        }
+
+        /* Logo styling */
+        .logo {
+            display: flex;
+            align-items: center;
+            color: #e94e77;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .logo-symbol {
+            width: 20px;
+            height: 20px;
+            background-color: #e94e77;
+            display: inline-block;
+            border-radius: 3px;
+            margin-right: 8px;
+            position: relative;
+        }
+
+        /* Styled hashtag in the logo */
+        .logo-symbol::before, .logo-symbol::after {
+            content: "";
+            position: absolute;
+            background-color: white;
+            border-radius: 1px;
+        }
+
+        .logo-symbol::before {
+            width: 4px;
+            height: 16px;
+            top: 2px;
+            left: 8px;
+            transform: rotate(45deg);
+        }
+
+        .logo-symbol::after {
+            width: 4px;
+            height: 16px;
+            top: 2px;
+            left: 8px;
+            transform: rotate(-45deg);
+        }
+
+        /* Footer text and links styling */
+        .footer-text {
+            color: #666;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .footer-links a {
+            text-decoration: none;
+            color: #e94e77;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Footer Section -->
+    <footer>
+        <!-- Logo on the left -->
+        <div class="logo">
+            <div class="logo-symbol"></div>
+            © 2024 Influencity, All Rights Reserved.
+        </div>
+
+        <!-- Links on the right -->
+        <div class="footer-links">
+            <a href="#">Go to influencity.com</a>
+            <a href="#">Legal Stuff</a>
+            <a href="#">Privacy Policy</a>
+        </div>
+    </footer>
+
+</body>
+</html>
