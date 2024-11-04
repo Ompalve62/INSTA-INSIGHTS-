@@ -167,9 +167,170 @@
     </div>
 </div>
 
-
+<!-- charts -->
+<div class="x9Y2W3-container">
+    <div class="x9Y2W3-box">
+        <div class="x9Y2W3-header">
+            FOLLOWERS <span class="x9Y2W3-decrease">▼ -0.07%</span> this month
+        </div>
+        <div class="x9Y2W3-chart">
+            <canvas id="followersChart"></canvas>
+        </div>
+    </div>
+    <div class="x9Y2W3-box">
+        <div class="x9Y2W3-header">
+            FOLLOWING <span class="x9Y2W3-neutral">0%</span> this month
+        </div>
+        <div class="x9Y2W3-chart">
+            <canvas id="followingChart"></canvas>
+        </div>
+    </div>
+    <div class="x9Y2W3-box">
+        <div class="x9Y2W3-header">
+            LIKES <span class="x9Y2W3-increase">▲ 0.73%</span> this month
+        </div>
+        <div class="x9Y2W3-chart">
+            <canvas id="likesChart"></canvas>
+        </div>
+    </div>
 </div>
 
+<!-- Include Chart.js from CDN -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+// Followers Chart
+const followersChartCtx = document.getElementById('followersChart').getContext('2d');
+const followersChart = new Chart(followersChartCtx, {
+    type: 'line',
+    data: {
+        labels: ['Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'],
+        datasets: [{
+            label: 'Followers',
+            data: [280, 280, 280, 280, 280, 280, 280], // Replace with actual data points
+            borderColor: '#4a90e2',
+            borderWidth: 2,
+            fill: false
+        }]
+    },
+    options: {
+        responsive: true,
+        scales: {
+            y: {
+                beginAtZero: true,
+                ticks: {
+                    callback: (value) => value + 'M' // Display in millions
+                }
+            }
+        }
+    }
+});
+
+// Following Chart
+const followingChartCtx = document.getElementById('followingChart').getContext('2d');
+const followingChart = new Chart(followingChartCtx, {
+    type: 'line',
+    data: {
+        labels: ['Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'],
+        datasets: [{
+            label: 'Following',
+            data: [320, 320, 320, 320, 320, 320, 320], // Replace with actual data points
+            borderColor: '#4a90e2',
+            borderWidth: 2,
+            fill: false
+        }]
+    },
+    options: {
+        responsive: true,
+        scales: {
+            y: {
+                beginAtZero: true,
+                ticks: {
+                    callback: (value) => value // Display as is
+                }
+            }
+        }
+    }
+});
+
+// Likes Chart
+const likesChartCtx = document.getElementById('likesChart').getContext('2d');
+const likesChart = new Chart(likesChartCtx, {
+    type: 'line',
+    data: {
+        labels: ['Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'],
+        datasets: [{
+            label: 'Likes',
+            data: [4.0, 3.5, 3.5, 3.5, 6.5, 6.5, 6.5], // Replace with actual data points
+            borderColor: '#4a90e2',
+            borderWidth: 2,
+            fill: false
+        }]
+    },
+    options: {
+        responsive: true,
+        scales: {
+            y: {
+                beginAtZero: true,
+                ticks: {
+                    callback: (value) => value + 'M' // Display in millions
+                }
+            }
+        }
+    }
+});
+
+
+</script>
+
+<div class="interest">
+    <div class="dashboard">
+        <div class="section interests">
+            <h2>Influencer Interests</h2>
+            <ul>
+                <li>Travel, Tourism & Aviation</li>
+                <li>Healthy Lifestyle</li>
+                <li>Sports</li>
+                <li>Cars & Motorbikes</li>
+                <li>Business & Careers</li>
+            </ul>
+        </div>
+        <div class="section mentions">
+            <h2>Mentions</h2>
+            <ul>
+                <li><span>oceanbeverages</span> <span>12.28%</span></li>
+                <li><span>staywrogn</span> <span>10.53%</span></li>
+                <li><span>pumaindia</span> <span>9.65%</span></li>
+                <li><span>anushkasharma</span> <span>7.02%</span></li>
+                <li><span>amtouristerin</span> <span>5.26%</span></li>
+            </ul>
+            <div class="pagination">1 - 5 of 16 mentions</div>
+        </div>
+        <div class="section hashtags">
+            <h2>Hashtags</h2>
+            <div class="tags">
+                <span>#ad</span>
+                <span>#oceanbeverages</span>
+                <span>#staywrogn</span>
+                <span>#hydration</span>
+                <span>#oceanfruitwater</span>
+                <span>#fruitwater</span>
+                <span>#oceandrinks</span>
+                <span>#supremehydration</span>
+                <span>#naturalflavours</span>
+                <span>#americantouristerindia</span>
+                <span>#staymad</span>
+                <span>#americantourister</span>
+                <span>#newlaunch</span>
+                <span>#herbalife</span>
+                <span>#livelylychee</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+  
+</div>
 
 </body>
 </html>

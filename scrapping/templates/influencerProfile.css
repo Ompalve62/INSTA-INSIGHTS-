@@ -5,6 +5,7 @@ body{
     font-family: Arial, sans-serif;
     position: absolute;
     right: 0;
+    box-sizing: border-box;
 }
 
 .header{
@@ -79,7 +80,7 @@ hr{
 
 .container{
     background-color: rgb(242, 229, 229);
-    height: 100vh;
+    height: 100%;
 }
 
 
@@ -279,4 +280,120 @@ hr{
     padding-top:30px;
 }
 
+
+.x9Y2W3-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.x9Y2W3-box {
+    width: 29%;
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+}
+
+.x9Y2W3-header {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.x9Y2W3-decrease {
+    color: #d9534f;
+}
+
+.x9Y2W3-neutral {
+    color: #333;
+}
+
+.x9Y2W3-increase {
+    color: #5cb85c;
+}
+
+.x9Y2W3-chart {
+    position: relative;
+    height: 150px;
+}
+
+
+.interest {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    
+}
+
+.interest .dashboard {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.interest .dashboard .section {
+    width: 33%;
+}
+
+.interest .dashboard .section h2 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #666;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.interest .dashboard .interests ul, .mentions ul {
+    list-style: none;
+    font-size: 14px;
+    padding-left: 0;
+}
+
+.interest .dashboard .interests ul{
+    padding-left: 20px;
+}
+
+
+.interest .dashboard .interests li {
+    padding: 8px 0;
+    color: #333;
+}
+
+.interest .dashboard .mentions ul li {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    color: #333;
+}
+
+.interest .dashboard .pagination {
+    font-size: 12px;
+    color: #666;
+    margin-top: 10px;
+}
+
+.interest .dashboard .hashtags .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.interest .dashboard .hashtags .tags span {
+
+    background-color: #f0f2f5;
+    padding: 6px 12px;
+    font-size: 12px;
+    color: #ff4f7b;
+    border-radius: 15px;
+    /* display: flex;
+    flex-wrap: wrap; */
+}
 
