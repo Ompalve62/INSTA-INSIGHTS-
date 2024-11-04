@@ -357,6 +357,12 @@ hr{
     padding-left: 0;
 }
 
+.vertical-divider {
+    width: 1px;
+    background-color: #e0e0e0;
+}
+
+
 .interest .dashboard .interests ul{
     padding-left: 20px;
 }
