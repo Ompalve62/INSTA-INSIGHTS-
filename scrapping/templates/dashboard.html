@@ -254,12 +254,48 @@ input[type="text"] {
 .tag:hover {
     background-color: #FF4500;
     color: white;
+    
 }
 
 .search-icon {
     font-size: 16px;
     margin-left: 5px;
 }
+
+
+.grid-section {
+    margin-top: 20px;
+    background-color: #f5f7fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.boxes{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    /* padding: 50px; */
+    width: 60%;
+    column-gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.box{
+    border: 1px solid #ccc; 
+    justify-content: center;
+    background-color: white;
+    height: 100px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    /* cursor: pointer; */
+}
+
+
 
 /* Button Styling for Search and Explore */
 .btn-search, .btn-explore {
@@ -278,6 +314,47 @@ input[type="text"] {
 .btn-search:hover, .btn-explore:hover {
     background-color: #e03e00; /* Slightly darker shade for hover effect */
 }
+/* Profile Sidebar Styling */
+.profile-sidebar {
+    position: absolute; /* change this to 'fixed' if you want it to remain in place while scrolling */
+    bottom: 0;
+    left: 0; /* Adjusted to align the profile section on the left */
+    padding: 10px;
+    color: #fff;
+    text-align: left; /* Ensures text is aligned to the left */
+}
+
+.profile-container {
+    display: flex;
+    flex-direction: row; /* Change to row for horizontal alignment */
+    align-items: center; /* Align items in the center vertically */
+    padding: 10px;
+    margin-bottom: 20px; /* Space between profile info and logout */
+}
+.profile-pic {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #fff; /* Background color for the profile circle */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #2b2f33; /* Color of the letter inside */
+    font-size: 20px; /* Adjust font size for the letter */
+    font-weight: bold; /* Make the letter bold */
+    border: 2px solid #d9534f; /* Border color around the profile circle */
+    margin-right: 10px; /* Adds space between profile pic and name */
+}
+
+.profile-info {
+    margin-top: 0; /* Remove the top margin */
+}
+
+.profile-name {
+    color: #C02C08;
+    font-size: 17px;
+}
+
 
     </style>
 </head>
@@ -294,7 +371,7 @@ input[type="text"] {
                     </div>
                     <ul class="nav flex-column mt-3">
                         <li class="nav-item">
-                            <a class="nav-link active" href="{% url 'dashboard' %}"><i class="fas fa-tachometer-alt"></i> Home
+                            <a class="nav-link active" href="{% url 'dashboard' %}"><i class="fas fa-tachometer-alt"></i> Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link active" href="{% url 'profile' %}"><i class="fas fa-user"></i> Profile</a>
@@ -328,22 +405,7 @@ input[type="text"] {
                     <!-- <button class="btn btn-gradient mt-2">Get Started</button> -->
                 </div>
 
-                <!-- Influencer Section -->
-                <!-- <section class="influencer-section text-center mb-4">
-                    <h4 class="text-secondary">Watch Influencer Story</h4>
-                    <div class="d-flex justify-content-center mt-3">
-                        <div class="influencer-img mx-2">
-                            <img src="influencer1.jpg" class="rounded-circle shadow" alt="Influencer 1" width="80">
-                        </div>
-                        <div class="influencer-img mx-2">
-                            <img src="influencer2.jpg" class="rounded-circle shadow" alt="Influencer 2" width="80">
-                        </div>
-                        <div class="influencer-img mx-2">
-                            <img src="influencer3.jpg" class="rounded-circle shadow" alt="Influencer 3" width="80">
-                        </div>
-                        <button class="btn btn-outline-secondary ml-3">30+ More</button>
-                    </div>
-                </section> -->
+                
 
                 <div class="container">
                     <h1>
@@ -400,6 +462,42 @@ input[type="text"] {
                             <span class="tag">Automobile</span>
                             <span class="tag">#beauty</span>
                             <span class="tag">Automobile</span>
+                        
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Influencer Section 
+                <section class="influencer-section text-center mb-4">
+                    <h4 class="text-secondary">Watch Influencer Story</h4>
+                    <div class="d-flex justify-content-center mt-3">
+                        <div class="influencer-img mx-2">
+                            <img src="influencer1.jpg" class="rounded-circle shadow" alt="Influencer 1" width="80">
+                        </div>
+                        <div class="influencer-img mx-2">
+                            <img src="influencer2.jpg" class="rounded-circle shadow" alt="Influencer 2" width="80">
+                        </div>
+                        <div class="influencer-img mx-2">
+                            <img src="influencer3.jpg" class="rounded-circle shadow" alt="Influencer 3" width="80">
+                        </div>
+                        <button class="btn btn-outline-secondary ml-3">30+ More</button>
+                    </div>
+                </section> -->
+
+                <!-- boxes -->
+                 <!-- <div class="grid-section">
+                 <section class="boxes">
+                    <div class="box">
+                        x
+                    </div>
+                    <div class="box">
+                        y
+                    </div>
+                    <div class="box">
+                        z
+                    </div>
+                 </section> -->
                             
                             
 
@@ -410,12 +508,21 @@ input[type="text"] {
                             
                         </div>
                     </div>
-                </div><div class="search-container text-center" style="margin: 0; margin-right: 30px;">
+                </div><div class="search-container text-center" style="margin: 0; margin-right: 20px;">
                     <button class="btn-search">Search</button>
                     <!-- New Search Button -->
                 </div>
         </div>
         
+    </div>
+    <div class="profile-sidebar">
+        <div class="profile-container">
+            <div class="profile-pic">M</div> <!-- Replace img with div containing "A" -->
+            <div class="profile-info">
+                <h4 class="profile-name">Metatester</h4>
+                {% comment %} <button class="logout-btn">Logout</button> {% endcomment %}
+            </div>
+        </div>
     </div>
     
     
