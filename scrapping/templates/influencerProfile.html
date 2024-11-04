@@ -1,0 +1,359 @@
+{% extends 'base.html' %}
+
+{% block title %}Profiles{% endblock %}
+
+{% block header %}
+Detail information
+{% endblock %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./influencerProfile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>influencer Profile</title>
+</head>
+<body>
+    <div class="header">
+        <h1 class="heading">Profile</h1>
+        <p class="icon1">&#10006;</p>
+    </div>
+
+    <div class="main-flex">
+    <div class="main">
+        
+        <div class="image">
+            <img src="https://media.gettyimages.com/id/1434940863/photo/brisbane-australia-virat-kohli-poses-during-the-india-icc-mens-t20-cricket-world-cup-2022.jpg?s=612x612&w=0&k=20&c=TSWXnXJbg24zkYiS91HRsnnWGVCdUGIeVMMiGM3iL1U=" alt="" width="50">
+        </div>
+        <div class="nameid">
+            <i class="fa fa-instagram"> </i>   @virat.kohli
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="15" height="15" viewBox="0 0 256 256" xml:space="preserve">
+
+                <defs>
+                </defs>
+                <g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;" transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)" >
+                    <polygon points="45,6.18 57.06,0 64.41,11.38 77.94,12.06 78.62,25.59 90,32.94 83.82,45 90,57.06 78.62,64.41 77.94,77.94 64.41,78.62 57.06,90 45,83.82 32.94,90 25.59,78.62 12.06,77.94 11.38,64.41 0,57.06 6.18,45 0,32.94 11.38,25.59 12.06,12.06 25.59,11.38 32.94,0 " style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(0,150,241); fill-rule: nonzero; opacity: 1;" transform="  matrix(1 0 0 1 0 0) "/>
+                    <polygon points="40.16,58.47 26.24,45.08 29.7,41.48 40.15,51.52 61.22,31.08 64.7,34.67 " style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1;" transform="  matrix(1 0 0 1 0 0) "/>
+                </g>
+                </svg>
+                <span>&#8599;</span>
+        
+        <div class="update">
+            Last update: 12/12/2023
+        </div>
+    </div>
+    </div>
+    <div class="icons fa" style='font-size:24px'>
+        &#xf021; &#xf1e0 &#xf02f; &#xf019 &#xf067; &#xf1f8;
+    </div>
+</div>
+<div class="headings">
+    <p class="active">Insights</p>
+    <p>Lists</p>
+    <p>Campaigns</p>
+    <p>Prices</p>
+</div>
+<hr>
+<div class="container">
+    <div class="toggle-container">
+        <button class="toggle-button active">From followers</button>
+        <button class="toggle-button">From likers</button>
+   </div>
+
+   <!-- grid for 5 boxes -->
+   <div class="stats-container">
+    <div class="stat-card">
+        <div class="icon">&#128101;</div>
+        <div class="stat-info">
+            <div class="stat-value">270.65M</div>
+            <div class="stat-label">Followers</div>
+        </div>
+    </div>
+    <div class="stat-card">
+        <div class="icon">&#128100;</div>
+        <div class="stat-info">
+            <div class="stat-value">282</div>
+            <div class="stat-label">Following</div>
+        </div>
+    </div>
+    <div class="stat-card">
+        <div class="icon">&#127919;</div>
+        <div class="stat-info">
+            <div class="stat-value">0.92%</div>
+            <div class="stat-label">Engagement</div>
+        </div>
+    </div>
+    <div class="stat-card">
+        <div class="icon">&#128181;</div>
+        <div class="stat-info">
+            <div class="stat-value">$1,674,357.84</div>
+            <div class="stat-label">Earned media</div>
+        </div>
+    </div>
+    <div class="stat-card">
+        <div class="icon">&#128214;</div>
+        <div class="stat-info">
+            <div class="stat-value">2.48M</div>
+            <div class="stat-label">Avg. Interactions</div>
+        </div>
+    </div>
+</div>
+
+
+   <!-- 3boxes -->
+
+   <div class="stats-container-three">
+    <div class="stat-card">
+        <div class="icon">&#128101;</div>
+        <div class="stat-info">
+            <div class="stat-value">5.26%</div>
+            <div class="stat-label">Notable followers</div>
+        </div>
+    </div>
+    <div class="stat-card">
+        <div class="icon">&#128181</div>
+        <div class="stat-info">
+            <div class="stat-value">27.55%</div>
+            <div class="stat-label">Paid post performance</div>
+        </div>
+    </div>
+    <div class="stat-card">
+        <div class="icon fa">&#xf16a;</div>
+        <div class="stat-info">
+            <div class="stat-value">32.64M</div>
+            <div class="stat-label">Avg Reel Plays</div>
+        </div>
+    </div>
+</div>
+
+<!-- circle charts -->
+<div class="dashboard">
+    <!-- Follower Quality Section -->
+    <div class="card follower-quality">
+        <h4>Follower Quality &#9432;</h4>
+        <div class="quality-chart">
+            <div class="progress-circle">
+                <span>78.91%</span>
+            </div>
+            <div class="quality-details">
+                <div class="nice-followers">213.57M <span>Nice followers</span></div>
+                <div class="doubtful-followers">57.08M <span>Doubtful Followers</span></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Average Activity Split Section -->
+    <div class="card activity-split">
+        <h4>Average Activity Split &#9432;</h4>
+        <div class="activity-chart">
+            <div class="progress-circle-two">
+                <span>6.9M</span>
+            </div>
+            <div class="activity-details">
+                <div class="views">6.90M <span>Views</span></div>
+                <div class="likes">2.46M <span>Likes</span></div>
+                <div class="comments">26.04K <span>Comments</span></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Engagement Rate Section -->
+    <div class="card engagement-rate">
+        <h4>Engagement Rate &#9432;</h4>
+        <div class="engagement-chart">
+            <span>0.92%</span>
+            <div class="bar-chart">
+                <div class="bar median"></div>
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+                <div class="bar4"></div>
+                <div class="bar5"></div>
+                <div class="bar6"></div>
+                <div class="bar7"></div>
+                <div class="bar8"></div>
+                <div class="bar9"></div>
+                <div class="bar10"></div>
+                <div class="bar11"></div>
+                <div class="bar12"></div>
+                <div class="bar13"></div>
+                <div class="bar14"></div>
+                <div class="bar14"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- charts -->
+<div class="x9Y2W3-container">
+    <div class="x9Y2W3-box">
+        <div class="x9Y2W3-header">
+            FOLLOWERS <span class="x9Y2W3-decrease">▼ -0.07%</span> this month
+        </div>
+        <div class="x9Y2W3-chart">
+            <canvas id="followersChart"></canvas>
+        </div>
+    </div>
+    <div class="x9Y2W3-box">
+        <div class="x9Y2W3-header">
+            FOLLOWING <span class="x9Y2W3-neutral">0%</span> this month
+        </div>
+        <div class="x9Y2W3-chart">
+            <canvas id="followingChart"></canvas>
+        </div>
+    </div>
+    <div class="x9Y2W3-box">
+        <div class="x9Y2W3-header">
+            LIKES <span class="x9Y2W3-increase">▲ 0.73%</span> this month
+        </div>
+        <div class="x9Y2W3-chart">
+            <canvas id="likesChart"></canvas>
+        </div>
+    </div>
+</div>
+
+<!-- Include Chart.js from CDN -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+// Followers Chart
+const followersChartCtx = document.getElementById('followersChart').getContext('2d');
+const followersChart = new Chart(followersChartCtx, {
+    type: 'line',
+    data: {
+        labels: ['Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'],
+        datasets: [{
+            label: 'Followers',
+            data: [280, 280, 280, 280, 280, 280, 280], // Replace with actual data points
+            borderColor: '#4a90e2',
+            borderWidth: 2,
+            fill: false
+        }]
+    },
+    options: {
+        responsive: true,
+        scales: {
+            y: {
+                beginAtZero: true,
+                ticks: {
+                    callback: (value) => value + 'M' // Display in millions
+                }
+            }
+        }
+    }
+});
+
+// Following Chart
+const followingChartCtx = document.getElementById('followingChart').getContext('2d');
+const followingChart = new Chart(followingChartCtx, {
+    type: 'line',
+    data: {
+        labels: ['Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'],
+        datasets: [{
+            label: 'Following',
+            data: [320, 320, 320, 320, 320, 320, 320], // Replace with actual data points
+            borderColor: '#4a90e2',
+            borderWidth: 2,
+            fill: false
+        }]
+    },
+    options: {
+        responsive: true,
+        scales: {
+            y: {
+                beginAtZero: true,
+                ticks: {
+                    callback: (value) => value // Display as is
+                }
+            }
+        }
+    }
+});
+
+// Likes Chart
+const likesChartCtx = document.getElementById('likesChart').getContext('2d');
+const likesChart = new Chart(likesChartCtx, {
+    type: 'line',
+    data: {
+        labels: ['Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'],
+        datasets: [{
+            label: 'Likes',
+            data: [4.0, 3.5, 3.5, 3.5, 6.5, 6.5, 6.5], // Replace with actual data points
+            borderColor: '#4a90e2',
+            borderWidth: 2,
+            fill: false
+        }]
+    },
+    options: {
+        responsive: true,
+        scales: {
+            y: {
+                beginAtZero: true,
+                ticks: {
+                    callback: (value) => value + 'M' // Display in millions
+                }
+            }
+        }
+    }
+});
+
+
+</script>
+
+<div class="interest">
+    <div class="dashboard">
+        <div class="section interests">
+            <h2>Influencer Interests</h2>
+            <ul>
+                <li>Travel, Tourism & Aviation</li>
+                <li>Healthy Lifestyle</li>
+                <li>Sports</li>
+                <li>Cars & Motorbikes</li>
+                <li>Business & Careers</li>
+            </ul>
+        </div>
+        <div class="vertical-divider"></div>
+        <div class="section mentions">
+            <h2>Mentions</h2>
+            <ul>
+                <li><span>oceanbeverages</span> <span>12.28%</span></li>
+                <li><span>staywrogn</span> <span>10.53%</span></li>
+                <li><span>pumaindia</span> <span>9.65%</span></li>
+                <li><span>anushkasharma</span> <span>7.02%</span></li>
+                <li><span>amtouristerin</span> <span>5.26%</span></li>
+            </ul>
+            <div class="pagination">1 - 5 of 16 mentions</div>
+        </div>
+        <div class="vertical-divider"></div>
+        <div class="section hashtags">
+            <h2>Hashtags</h2>
+            <div class="tags">
+                <span>#ad</span>
+                <span>#oceanbeverages</span>
+                <span>#staywrogn</span>
+                <span>#hydration</span>
+                <span>#oceanfruitwater</span>
+                <span>#fruitwater</span>
+                <span>#oceandrinks</span>
+                <span>#supremehydration</span>
+                <span>#naturalflavours</span>
+                <span>#americantouristerindia</span>
+                <span>#staymad</span>
+                <span>#americantourister</span>
+                <span>#newlaunch</span>
+                <span>#herbalife</span>
+                <span>#livelylychee</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+  
+</div>
+
+</body>
+</html>
+{% endblock %}

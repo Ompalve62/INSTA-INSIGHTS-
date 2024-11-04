@@ -24,6 +24,7 @@
         .sidebar {
             height: 100vh;
             background-color: #ffffff;
+            width: 200px;
         }
 
         .sidebar .nav-link {
@@ -51,8 +52,12 @@
 
         /* Main Content Styling */
         .main-content {
-            padding: 20px;
+            /* padding: 20px; */
             background-color: #f8f9fa;
+            width: calc(100vw - 200px);
+            display: flex;
+            flex-direction: column;
+
         }
 
         .dashboard-header {
@@ -78,7 +83,7 @@
     <div class="container-fluid">
         <div class="row">
             <!-- Sidebar -->
-            <nav class="col-md-2 sidebar">
+            <nav class=" sidebar">
                 <div class="sidebar-header">
                     <img src="https://s3-alpha-sig.figma.com/img/1956/a201/e1a1cf56ef437ee13ea1e7bb5a245a24?Expires=1730678400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=ReQ9-yjYQUxIoSUg~qqyuLKc81MjxCjrmBn3lcjh6CAJgIDDH4OKsEaiozFG1SOG~38NdeYZXbRNXyJdf25JdVoPJ1XY81sLtiytMJNGKC88pDPTu-WwSj9dTnhUOTruToYWlMVqqNHik3wCDPVSbt7UkPzAqmFCuF8WZBjPhRD2pxJ1yzqDxgCSkxtL-Ag8Cjl2nNDVvhddGH7LiyC4YRzF~JB0z-PmtoezPGiTFOHr-R47Imrh6HhZG0be85hLrEsGdyN6CJjObWmtOBzRERp902b8jtp1USSQJGH-hmVR1evlXdhGS8mz9pojK-9x8w2GVglNm615MAUmJdc24A__" alt="Logo" width="80">
                     <h5>DigitalDose</h5>
@@ -112,7 +117,7 @@
             </nav>
 
             <!-- Main Content Area -->
-            <main class="col-md-10 main-content">
+            <main class="main-content">
                 <div class="dashboard-header">
                     <h1>{% block header %} Dashboard Header {% endblock %}</h1>
                 </div>

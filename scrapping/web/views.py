@@ -49,3 +49,7 @@ def profile(request):
 
 def influencers_dash(request):
     return render(request,'influencers.html')
+
+
+def influ_view(request):
+    return render(request,'influencerProfile.html')
