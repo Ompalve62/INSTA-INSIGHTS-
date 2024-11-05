@@ -56,3 +56,6 @@ def influ_view(request):
 
 def influ_view01(request):
     return render(request,'profile01.html')
+
+def faqs(request):
+    return render(request,'faq.html')
