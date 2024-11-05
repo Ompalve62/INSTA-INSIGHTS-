@@ -1,0 +1,168 @@
+
+{% extends 'base.html' %}
+
+{% block title %}Profile Settings{% endblock %}
+
+{% block header %}
+Profile Settings
+{% endblock %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang>
+<head>
+    <title>Profiles Table</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fc;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #eaeaea;
+        }
+        .header h2 {
+            font-size: 24px;
+            margin: 0;
+            font-weight: bold;
+        }
+        .header button {
+            background-color: #ff4081;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .tabs {
+            display: flex;
+            margin-top: 20px;
+            gap: 10px;
+        }
+        .tabs button {
+            background-color: #e9ecef;
+            border: none;
+            padding: 8px 12px;
+            cursor: pointer;
+            color: #333;
+            border-radius: 4px;
+        }
+        .tabs button.active {
+            background-color: #dee2e6;
+            font-weight: bold;
+        }
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #eaeaea;
+        }
+        th {
+            background-color: #f1f3f5;
+            font-weight: bold;
+        }
+        td img {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+        .actions {
+            display: flex;
+            align-items: center;
+        }
+        .actions button {
+            background-color: #6c757d;
+            color: white;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-right: 8px;
+        }
+        .actions select, .filters select {
+            padding: 6px;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h2>Profiles</h2>
+            <button>Add Profile</button>
+        </div>
+        <div class="tabs">
+            <button class="active">All Profiles</button>
+    
+        </div>
+        <div class="filters">
+            <select>
+                <option>Social Network</option>
+            </select>
+            <select>
+                <option>Followers</option>
+            </select>
+            <select>
+                <option>Engagement</option>
+            </select>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Profile Name</th>
+                    <th>Influencer Alias</th>
+                    <th>Original Source</th>
+                    <th>Followers</th>
+                    <th>Engagement</th>
+                    <th>Follower Quality</th>
+                    <th>Follower to...</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><img src="virat.jpeg" alt="Profile Picture"> @virat.kohli</td>
+                    <td>Associate with an Influencer</td>
+                    <td>Manual</td>
+                    <td>270.45M</td>
+                    <td>0.91%</td>
+                    <td>78.79%</td>
+                    <td>Men 75.52%</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="actions">
+            <button>Actions</button>
+        </div>
+    </div>
+</body>
+</html>
+{% endblock %}
+
