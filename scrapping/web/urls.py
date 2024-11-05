@@ -10,5 +10,6 @@ urlpatterns = [
     path('profile',views.profile,name='profile'),
     path('influencers',views.influencers_dash,name='influencers'),
     path('influencers_stats',views.influ_view,name='influencers_stats'),
+    path('influencers_stats01',views.influ_view01,name='influencers_stats01'),
 
 ]

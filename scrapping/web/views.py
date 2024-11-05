@@ -53,3 +53,6 @@ def influencers_dash(request):
 
 def influ_view(request):
     return render(request,'influencerProfile.html')
+
+def influ_view01(request):
+    return render(request,'profile01.html')

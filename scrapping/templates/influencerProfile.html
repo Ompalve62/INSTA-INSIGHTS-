@@ -7,12 +7,418 @@ Detail information
 {% endblock %}
 
 {% block content %}
+<style>body{
+    margin: 0;
+    padding: 0;
+    min-width: 900px;
+    font-family: Arial, sans-serif;
+    position: absolute;
+    right: 0;
+    box-sizing: border-box;
+}
+
+.header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #c02c08;
+}
+
+.heading{
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    padding-left:20px;
+}
+
+.icon1{
+    font-size: 20px;
+    padding-right:20px;
+    color: white;
+}
+.main{
+    display: flex;
+    flex-direction: row;
+    padding-top: 5px;
+}
+
+img{
+    border-radius: 50%;
+    width:50px;
+    height: 50px;
+    padding-right: 10px
+}
+
+.main-flex{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    align-items: center;
+}
+
+.headings{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    padding-left: 20px;
+    padding-bottom: 0;
+    margin: 0;
+}
+
+.headings .active{
+    border-bottom: 2px solid black;
+    padding-bottom: 10px;
+    color: black;
+    margin-bottom: 0;
+}
+
+ .headings p{
+    color: grey;
+    font-weight: bold;
+}
+
+.icons{
+    word-spacing:10px;
+}
+
+hr{
+    padding: 0;
+    margin: 0;
+}
+
+.container{
+    background-color: rgb(242, 229, 229);
+    height: 100%;
+}
+
+
+.toggle-container {
+    display: inline-flex;
+    background-color: #dbd3d3;
+    border-radius: 20px;
+    padding: 4px;
+    margin: 10px;
+}
+
+.toggle-button{
+    background-color: transparent;
+    border: none;
+    padding: 8px 16px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: #7a7a7a;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: background-color 0.3s color 0.3s;
+}
+
+.toggle-button.active {
+    background-color: #ffffff;
+    color: #3a3a3a;
+    font-weight: bold;
+}
+
+.stats-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    padding: 10px;
+}
+
+.stat-card {
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.stat-card .icon {
+    font-size: 24px;
+    color: #5e5ce6;
+    margin-bottom: 10px;
+}
+
+.stat-value {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333333;
+}
+
+.stat-label {
+    font-size: 14px;
+    color: #777777;
+}
+
+.stats-container-three {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 5px 10px;
+}
+
+/* Container for all dashboard cards */
+.dashboard {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    padding: 10px;
+}
+
+.card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    /* padding-left: 30px; */
+}
+
+/* Header styling */
+.card h4 {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 10px;
+    top: 10px;
+}
+
+/* Follower Quality and Activity Split charts */
+.quality-chart, .activity-chart {
+    display: flex;
+    align-items: center;
+}
+
+.progress-circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 10px solid #5e5ce6;
+    border-right-color: #ea4c89; /* Color split */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+    margin-right: 15px;
+}
+
+.progress-circle-two {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 10px solid #5e5ce6;
+    border-right-color: #ea4c89; /* Color split */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin-right: 15px;
+}
+
+.quality-details, .activity-details {
+    font-size: 12px;
+    color: #777;
+}
+
+.quality-details div, .activity-details div {
+    margin-bottom: 8px;
+}
+
+.quality-details .nice-followers {
+    color: #5e5ce6;
+}
+
+.quality-details .doubtful-followers {
+    color: #ea4c89;
+}
+
+.activity-details .views {
+    color: #5e5ce6;
+}
+
+.activity-details .likes {
+    color: #ea4c89;
+}
+
+.activity-details .comments {
+    color: #ff9800;
+}
+
+/* Engagement Rate chart */
+.engagement-chart {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.bar-chart {
+    display: flex;
+    align-items: flex-end;
+    gap: 5px;
+}
+
+.bar {
+    width: 8px;
+    height: 40px;
+    background-color: #ccc;
+    border-radius: 4px;
+}
+
+.median {
+    background-color: #5e5ce6;
+    height: 60px;
+}
+
+.activity-split{
+    grid-row:span 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+}
+
+.activity-chart{
+    padding-top:30px;
+}
+
+
+.x9Y2W3-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.x9Y2W3-box {
+    width: 29%;
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+}
+
+.x9Y2W3-header {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.x9Y2W3-decrease {
+    color: #d9534f;
+}
+
+.x9Y2W3-neutral {
+    color: #333;
+}
+
+.x9Y2W3-increase {
+    color: #5cb85c;
+}
+
+.x9Y2W3-chart {
+    position: relative;
+    height: 150px;
+}
+
+
+.interest {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    
+}
+
+.interest .dashboard {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.interest .dashboard .section {
+    width: 33%;
+}
+
+.interest .dashboard .section h2 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #666;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.interest .dashboard .interests ul, .mentions ul {
+    list-style: none;
+    font-size: 14px;
+    padding-left: 0;
+}
+
+.vertical-divider {
+    width: 1px;
+    background-color: #e0e0e0;
+}
+
+
+.interest .dashboard .interests ul{
+    padding-left: 20px;
+}
+
+
+.interest .dashboard .interests li {
+    padding: 8px 0;
+    color: #333;
+}
+
+.interest .dashboard .mentions ul li {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    color: #333;
+}
+
+.interest .dashboard .pagination {
+    font-size: 12px;
+    color: #666;
+    margin-top: 10px;
+}
+
+.interest .dashboard .hashtags .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.interest .dashboard .hashtags .tags span {
+
+    background-color: #f0f2f5;
+    padding: 6px 12px;
+    font-size: 12px;
+    color: #ff4f7b;
+    border-radius: 15px;
+    /* display: flex;
+    flex-wrap: wrap; */
+}
+
+</style>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./influencerProfile.css">
+    <!-- <link rel="stylesheet" href="./influencerProfile.css"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>influencer Profile</title>
 </head>
