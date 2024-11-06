@@ -3,6 +3,7 @@ from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login as auth_login 
+from django.contrib.auth import logout as auth_logout
 def login(request):
     if request.method == 'POST':
             username = request.POST.get('username')
@@ -59,3 +60,7 @@ def influ_view01(request):
 
 def faqs(request):
     return render(request,'faq.html')
+
+def logout(request):
+    auth_logout(request)
+    return redirect('login')
