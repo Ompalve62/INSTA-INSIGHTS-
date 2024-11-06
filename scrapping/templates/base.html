@@ -69,6 +69,10 @@
             margin-bottom: 20px;
         }
 
+        .dashboard-header h1{
+            color: white;
+        }
+
         /* Flexbox layout to center content */
         .content-center {
             display: flex;
@@ -93,7 +97,7 @@
                         <a class="nav-link" href="{% url 'dashboard' %}"><i class="fas fa-tachometer-alt"></i> Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% 'profile' %}"><i class="fas fa-user"></i> Profile</a>
+                        <a class="nav-link" href="{% url 'profile' %}"><i class="fas fa-user"></i> Profile</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'influencers' %}"><i class="fas fa-users"></i> Top Influencers</a>
