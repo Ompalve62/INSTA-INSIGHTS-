@@ -1,21 +1,26 @@
 {% extends 'base.html' %}
 
-{% block title %}Profiles{% endblock %}
-
-{% block header %}
-Detail information
-{% endblock %}
-
+<h1>{% block header %} Dashboard1 {% endblock %}</h1>
+ 
 {% block content %}
+<main style="
+  height: calc(100vh);
+  overflow-y: scroll;
+  background-color: #f9f9f9;
+">
 <style>
+
+    .containerMain{
+        display: flex;
+            flex-direction: column;
+            overflow-y: auto;
+            width: 800px;
+    }
 body{
     margin: 0;
     padding: 0;
-    min-width: 900px;
     font-family: Arial, sans-serif;
     position: absolute;
-    right: 0;
-    box-sizing: border-box;
 }
 
 .header{
@@ -414,15 +419,7 @@ hr{
 }
 
 </style>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="./influencerProfile.css"> -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>influencer Profile</title>
-</head>
+<div class="containerMain">
 <body>
     <div class="header">
         <h1 class="heading">Profile</h1>
@@ -762,5 +759,6 @@ const likesChart = new Chart(likesChartCtx, {
 </div>
 
 </body>
-</html>
+</div>
+</main>
 {% endblock %}

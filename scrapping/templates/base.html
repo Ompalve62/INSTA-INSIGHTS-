@@ -68,6 +68,7 @@
             width: calc(100vw - 200px);
             display: flex;
             flex-direction: column;
+            box-sizing: border-box;
 
         }
 
@@ -78,6 +79,7 @@
             text-align: center;
             padding: 20px;
             margin-bottom: 20px;
+            max-width: 800px;
         }
 
         .dashboard-header h1{
@@ -87,9 +89,17 @@
         /* Flexbox layout to center content */
         .content-center {
             display: flex;
-            justify-content: center;
-            align-items: center;
+            /* justify-content: center;
+            align-items: center; */
             height: 100vh;
+            flex-direction: column;
+            box-sizing: border-box;
+        }
+
+        .container-fluid{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
     </style>
 </head>
