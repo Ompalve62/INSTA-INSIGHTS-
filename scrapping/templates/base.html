@@ -40,6 +40,17 @@
         .sidebar .nav-link:hover {
             background-color: #c82333;
         }
+        .nav-item.locked-button .nav-link {
+    color: #ccc; /* Gray out the text */
+    pointer-events: none; /* Disable clicking */
+    cursor: not-allowed; /* Change cursor to not-allowed */
+}
+
+.nav-item.locked-button .nav-link::after {
+    content: " (Coming Soon)";
+    font-size: smaller;
+    color: #999;
+}
 
         .sidebar-header {
             text-align: center;
@@ -93,26 +104,24 @@
                         <a class="nav-link" href="{% url 'dashboard' %}"><i class="fas fa-tachometer-alt"></i> Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% 'profile' %}"><i class="fas fa-user"></i> Profile</a>
+                        <a class="nav-link" href="{% url 'profile' %}"><i class="fas fa-user"></i> Profile</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'influencers' %}"><i class="fas fa-users"></i> Top Influencers</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fas fa-bullhorn"></i> Campaign</a>
+                        <a class="nav-link" href="{% url 'influencers_stats01' %}"><i class="fas fa-users"></i>Insights</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fas fa-file-alt"></i> Reports</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fas fa-cogs"></i> Settings</a>
-                    </li>
+
+                    <li class="nav-item locked-button"> <a class="nav-link" href="#"><i class="fas fa-bullhorn"></i> Campaign</a> 
+                    </li> <li class="nav-item locked-button"> <a class="nav-link" href="#"><i class="fas fa-file-alt"></i> Reports</a>
+                     </li> <li class="nav-item locked-button"> <a class="nav-link" href="#"><i class="fas fa-cogs"></i> Settings</a>
                     <li class="nav-item mt-auto">
                         <a class="nav-link active" href="{% url 'faqs_link' %}" target="_blank">FAQ</a>
         
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                        <a class="nav-link" href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"></i> Logout</a>
                     </li>
                 </ul>
             </nav>
