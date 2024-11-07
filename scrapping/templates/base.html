@@ -7,6 +7,7 @@
     <title>{% block title %} Dashboard {% endblock %}</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
         body {
             font-family: 'Poppins', sans-serif;
@@ -65,11 +66,16 @@
         .main-content {
             /* padding: 20px; */
             background-color: #f8f9fa;
-            width: calc(100vw - 200px);
-            display: flex;
+            width: calc(97vw - 200px);
+            /* display: flex;
             flex-direction: column;
+            box-sizing: border-box; */
 
         }
+
+        .main-content::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Edge */
+}
 
         .dashboard-header {
             background: #C02C08;
@@ -78,15 +84,34 @@
             text-align: center;
             padding: 20px;
             margin-bottom: 20px;
+            width: calc(100vw - 200px);
+        }
+
+        .dashboard-header h1{
+            color: white;
         }
 
         /* Flexbox layout to center content */
         .content-center {
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            /* display: flex; */
+            /* justify-content: center;
+            align-items: center; */
             height: 100vh;
+            /* flex-direction: column; */
+            /* box-sizing: border-box; */
         }
+
+        .content-center::-webkit-scrollbar{
+            display: none;}
+
+        .container-fluid{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .container-fluid::-webkit-scrollbar {
+            display: none;}
     </style>
 </head>
 
@@ -146,6 +171,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </body>
 
 </html>

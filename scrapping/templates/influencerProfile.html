@@ -1,21 +1,28 @@
 {% extends 'base.html' %}
 
-{% block title %}Profiles{% endblock %}
-
-{% block header %}
-Detail information
-{% endblock %}
-
+<h1>{% block header %} Dashboard1 {% endblock %}</h1>
+ 
 {% block content %}
+<main style="
+  height: calc(100vh);
+  overflow-y: scroll;
+  background-color: #f9f9f9;
+  width: calc(100vw - 200px);
+  margin-left: 10px;
+  margin-top: 10px;
+">
 <style>
+
+    .containerMain{
+        display: flex;
+            flex-direction: column;
+            overflow-y: auto;
+            margin-bottom: 120px;
+    }
 body{
     margin: 0;
     padding: 0;
-    min-width: 900px;
     font-family: Arial, sans-serif;
-    position: absolute;
-    right: 0;
-    box-sizing: border-box;
 }
 
 .header{
@@ -24,6 +31,7 @@ body{
     justify-content: space-between;
     align-items: center;
     background-color: #c02c08;
+    padding-top: 10px;
 }
 
 .heading{
@@ -48,7 +56,7 @@ img{
     border-radius: 50%;
     width:50px;
     height: 50px;
-    padding-right: 10px
+    margin-right: 10px
 }
 
 .main-flex{
@@ -262,15 +270,114 @@ hr{
 .bar-chart {
     display: flex;
     align-items: flex-end;
-    gap: 5px;
+    gap: 10px;
 }
 
-.bar {
-    width: 8px;
+.bar14 {
+    width: 20px;
+    height: 30px;
+    background-color: #ccc;
+    border-radius: 4px;
+}
+
+.bar13 {
+    width: 20px;
+    height: 31px;
+    background-color: #ccc;
+    border-radius: 4px;
+}
+
+.bar12 {
+    width: 20px;
+    height: 32px;
+    background-color: #ccc;
+    border-radius: 4px;
+}
+
+.bar11 {
+    width: 20px;
+    height: 33px;
+    background-color: #ccc;
+    border-radius: 4px;
+}
+
+.bar10 {
+    width: 20px;
+    height: 34px;
+    background-color: #ccc;
+    border-radius: 4px;
+}
+
+.bar9 {
+    width: 20px;
+    height: 35px;
+    background-color: #ccc;
+    border-radius: 4px;
+}
+
+.bar8 {
+    width: 20px;
+    height: 37px;
+    background-color: #ccc;
+    border-radius: 4px;
+}
+
+.bar7 {
+    width: 20px;
+    height: 38px;
+    background-color: #ccc;
+    border-radius: 4px;
+}
+
+.bar6 {
+    width: 20px;
     height: 40px;
     background-color: #ccc;
     border-radius: 4px;
 }
+
+.bar5 {
+    width: 20px;
+    height: 42px;
+    background-color: #ccc;
+    border-radius: 4px;
+}
+
+.bar4 {
+    width: 20px;
+    height: 44px;
+    background-color: #ccc;
+    border-radius: 4px;
+}
+
+.bar3 {
+    width: 20px;
+    height: 46px;
+    background-color: #ccc;
+    border-radius: 4px;
+}
+
+.bar2{
+    width: 20px;
+    height: 48px;
+    background-color: #ccc;
+    border-radius: 4px;
+}
+
+.bar1 {
+    width: 20px;
+    height: 50px;
+    background-color: #ccc;
+    border-radius: 4px;
+}
+
+.bar {
+    width: 20px;
+    height: 55px;
+    background-color: #ccc;
+    border-radius: 4px;
+}
+
 
 .median {
     background-color: #5e5ce6;
@@ -414,15 +521,7 @@ hr{
 }
 
 </style>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="./influencerProfile.css"> -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>influencer Profile</title>
-</head>
+<div class="containerMain">
 <body>
     <div class="header">
         <h1 class="heading">Profile</h1>
@@ -762,5 +861,6 @@ const likesChart = new Chart(likesChartCtx, {
 </div>
 
 </body>
-</html>
+</div>
+</main>
 {% endblock %}

@@ -3,33 +3,47 @@
 {% block title %}instagram Influencer Marketing Campaign Dashboard{% endblock %}
 
 {% block content %}
+<main style="
+  height: calc(100vh - 60px);
+  overflow-y: scroll;
+  padding: 1rem;
+  background-color: #f9f9f9;
+  width: 100%;
+">
 <style>
 
 .scrollable-content {
   height: calc(100vh - 60px); /* Full viewport height minus header height */
   overflow-y: auto; /* Enable vertical scrolling */
-  /* padding: 1rem; */
+  padding: 1rem;
   background-color: #f9f9f9;
   width: 100%;
-  display: flex;
+  /* display: flex;
   justify-content: space-between;
-  align-self: flex-start;
+   align-self: flex-start; */
   /* margin-right: 200px;  */
   /* padding-left: 0; */
-  /* min-width: 2700px; */
-}
-.scrollable-content::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Edge */
-}
+  /* min-width: 2700px; */}
+
+
+
 
         .container{
             display: flex;
             flex-direction: column;
             overflow-y: auto;
             width: 100%;
-            justify-content: flex-start;
+            justify-content: space-between;
             
         }
+
+        .container::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Edge */
+}
+
+.main::-webkit-scrollbar {
+    display: none;}
+
         body {
             font-family: Arial, sans-serif;
             background-color: white;
@@ -99,10 +113,10 @@
             align-items: center;
             justify-content: center;
             font-size: 1.5em;
-            color:#006699;
+            color:#990000;
             border-radius: 5px;
             font-weight: bold;
-            background-color: #e6f7ff;
+            background-color: white;
             padding: 10px;
         }
         .chart-container canvas {
@@ -112,6 +126,7 @@
             width: 100%;
             border-collapse: collapse;
             margin-top: 20px;
+            margin-bottom: 100px;
         }
         th, td {
             padding: 10px;
@@ -154,6 +169,14 @@
             display: flex;
             flex-direction: column;
             justify-content:space-between;
+        }
+
+        .card .title{
+            color: #c02c08;
+        }
+
+        .header-container h1{
+            color: #c02c08;
         }
     </style>
 <div class="container">
@@ -245,7 +268,7 @@
                 datasets: [{
                     label: 'Revenue',
                     data: [40000, 30000, 20000, 50000],
-                    backgroundColor: ['#3399ff', '#66b3ff', '#99ccff', '#cce6ff']
+                    backgroundColor: ['#c02c08', '#c02c0899', '#c02c0866', '#c02c0833']
                 }]
             },
             options: {
