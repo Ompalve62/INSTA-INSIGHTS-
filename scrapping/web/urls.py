@@ -14,5 +14,9 @@ urlpatterns = [
     path('influencers_stats01',views.influ_view01,name='influencers_stats01'),
     path('faqs_link',views.faqs,name='faqs_link'),
     path('logout/',views.logout,name='logout'),
-    
+    path('filter_open',views.filter_popup,name='filter_open'),
+    path('forgot',views.forgot,name='forgot'),
+    path('privacy',views.privacy_policy,name='privacy')
+
+
 ]

@@ -64,3 +64,14 @@ def faqs(request):
 def logout(request):
     auth_logout(request)
     return redirect('login')
+
+def filter_popup(request):
+    return render(request,'filter.html')
+
+def forgot(request):
+    return render(request,'forgot.html')
+
+
+
+def privacy_policy(request):
+    return render(request,'privacy.html')

@@ -13,25 +13,29 @@ Profile page
     <title>Profiles Table</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f8f9fc;
-            color: #333;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-        }
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 20px;
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-        }
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fc;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;  /* Center horizontally */
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;  /* Ensure content aligns to the top */
+}
         .header {
             display: flex;
             justify-content: space-between;
@@ -116,7 +120,7 @@ Profile page
     <div class="container">
         <div class="header">
             <h2>Profiles</h2>
-            <button>Add Profile</button>
+            <button style="background-color: #C02C08; border-color: #C02C08;">Add Profile</button>
         </div>
         <div class="tabs">
             <button class="active">All Profiles</button>
@@ -156,7 +160,7 @@ Profile page
                     <td>78.79%</td>
                     <td>Men 75.52%</td>
                     <td>
-                        <a href="{% url 'influencers_stats' %}" class="btn btn-primary">Full Insights</a>
+                        <a href="{% url 'influencers_stats' %}" class="btn btn-primary" style="background-color: #C02C08; border-color: #C02C08;">Full Insights</a>
                     </td>
                 </tr>
                 <tr>
@@ -169,7 +173,8 @@ Profile page
                     <td>Men 71.52%</td>
                     <!-- Add button with link in the last cell -->
                     <td>
-                        <a href="#" class="btn btn-primary">Full Insights</a>
+                        <a href="{% url 'influencers_stats' %}" class="btn btn-primary" style="background-color: #C02C08; border-color: #C02C08;">Full Insights</a>
+
                     </td>
                 </tr>
                 <tr>
@@ -181,7 +186,8 @@ Profile page
                     <td>67.79%</td>
                     <td>Men 66.52%</td>
                     <td>
-                        <a href="#" class="btn btn-primary">Full Insights</a>
+                        <a href="{% url 'influencers_stats' %}" class="btn btn-primary" style="background-color: #C02C08; border-color: #C02C08;">Full Insights</a>
+
                     </td>
                 </tr>
             </tbody>
