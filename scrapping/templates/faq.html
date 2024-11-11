@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -34,6 +35,7 @@
         }
 
         h1 {
+            align-content: center;
             font-size: 40px;
             margin: 0;
             color: white;
@@ -174,10 +176,7 @@
 
    
     <div class="box">
-
-        <img src="logo.jpeg" >
-        <img src="https://s3-alpha-sig.figma.com/img/1956/a201/e1a1cf56ef437ee13ea1e7bb5a245a24?Expires=1730678400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=ReQ9-yjYQUxIoSUg~qqyuLKc81MjxCjrmBn3lcjh6CAJgIDDH4OKsEaiozFG1SOG~38NdeYZXbRNXyJdf25JdVoPJ1XY81sLtiytMJNGKC88pDPTu-WwSj9dTnhUOTruToYWlMVqqNHik3wCDPVSbt7UkPzAqmFCuF8WZBjPhRD2pxJ1yzqDxgCSkxtL-Ag8Cjl2nNDVvhddGH7LiyC4YRzF~JB0z-PmtoezPGiTFOHr-R47Imrh6HhZG0be85hLrEsGdyN6CJjObWmtOBzRERp902b8jtp1USSQJGH-hmVR1evlXdhGS8mz9pojK-9x8w2GVglNm615MAUmJdc24A__" >
-
+        <img src="{% static 'logo.jpg' %}">
         <h1>Digital Dose</h1>
     </div>
 
@@ -287,11 +286,11 @@
        
         <div class="logo">
             <div class="logo-symbol"></div>
-            © 2024 Influencity, All Rights Reserved.
+            © 2024 DigitalDose, All Rights Reserved.
         </div>
 
         <div class="footer-links">
-            <a href="https://digitaldose.in/">Go to influencity.com</a>
+            <a href="https://digitaldose.in/">Go to DigitalDose.com</a>
             <a href="#">Legal Stuff</a>
             <a href="{% url 'privacy' %}" target="_blank">Privacy Policy</a>
         </div>

@@ -4,10 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Legal Policy</title>
-    <link rel="stylesheet" href="styles.css">
     <style>
-        /* Include the CSS styles for responsiveness, appearance, and interactivity */
-        
         /* Basic Reset */
         * {
             margin: 0;
@@ -19,223 +16,974 @@
         body {
             font-family: Arial, sans-serif;
             color: #333;
-            padding: 20px;
             background-color: #f9f9f9;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
 
         /* Header Styling */
-        .header {
+        header {
+            background-color:#C02C08;
+            color: #fff;
+            padding: 20px;
             text-align: center;
-            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            flex-wrap: wrap;
         }
 
-        .header h1 {
-            font-size: 2.5rem;
-            color: #333;
-        }
-
-        .header .subheading {
-            font-size: 1.2rem;
-            color: #777;
-        }
-
-        /* Dropdown Styling */
+        /* Dropdown Buttons in Header */
         .dropdown {
             position: relative;
-            display: inline-block;
-            width: 100%;
-            max-width: 250px;
-            margin: 10px 0;
         }
 
         .dropdown-button {
-            width: 100%;
-            padding: 10px 20px;
-            font-size: 1rem;
-            background-color: #007bff;
+            background-color: transparent;
             color: #fff;
+            font-size: 1rem;
             border: none;
-            border-radius: 5px;
             cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            padding: 10px 15px;
             transition: background-color 0.3s ease;
         }
 
         .dropdown-button:hover {
-            background-color: #0056b3;
+            background-color: rgba(255, 255, 255, 0.2);
         }
 
+        /* Dropdown Content Styling */
         .dropdown-content {
             display: none;
             position: absolute;
+            top: 100%;
+            left: 0;
             background-color: #ffffff;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            border-radius: 5px;
-            width: 100%;
-            margin-top: 5px;
-            z-index: 1;
-            transition: display 0.3s ease;
+            color: #333;
+            width: max-content;
+            padding: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         .dropdown-content a {
-            color: #333;
-            padding: 10px 20px;
-            text-decoration: none;
             display: block;
-            transition: background-color 0.3s ease;
+            color: #333;
+            text-decoration: none;
+            padding: 5px 10px;
+            white-space: nowrap;
         }
 
         .dropdown-content a:hover {
             background-color: #f1f1f1;
         }
 
-        /* Show Dropdown Content on Button Click */
-        .dropdown.open .dropdown-content {
+        /* Show dropdown content on hover */
+        .dropdown:hover .dropdown-content {
             display: block;
         }
 
-        /* Content Section Styling */
-        .content-section {
-            display: none;
-            padding: 20px;
-            background-color: #fff;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            margin-top: 10px;
+        /* Main Content Area */
+        .content {
+            flex-grow: 1;
+            padding: 30px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .content h2 {
+            margin-bottom: 10px;
+        }
+
+        .content p, .content ul {
+            line-height: 1.6;
+            margin-bottom: 10px;
         }
 
         /* Footer Styling */
         footer {
+            background-color: #333;
+            color: #fff;
             text-align: center;
-            padding: 20px;
+            padding: 15px;
             font-size: 0.9rem;
-            color: #777;
+            margin-top: auto;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
         }
     </style>
 </head>
 <body>
-    <header class="header">
+    <!-- Header with Horizontal Dropdowns -->
+    <header>
         <h1>Legal Policy</h1>
-        <p class="subheading">Legalese Easy To Me</p>
+        <div class="dropdown">
+            <button class="dropdown-button">For Everyone ▼</button>
+            <div class="dropdown-content">
+                <a href="#privacy-policy" onclick="showContent('privacy-policy')">Privacy Policy</a>
+                <a href="#cookies-policy" onclick="showContent('cookies-policy')">Cookies Policy</a>
+                <a href="#terms-of-use" onclick="showContent('terms-of-use')">Website Terms of Use</a>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <button class="dropdown-button">For Customers ▼</button>
+            <div class="dropdown-content">
+                <a href="#terms-conditions" onclick="showContent('terms-conditions')">Terms & Conditions of Services</a>
+                <a href="#data-processing" onclick="showContent('data-processing')">Data Processing Agreement</a>
+                <a href="#product-privacy" onclick="showContent('product-privacy')">Product Privacy Policy</a>
+                <!-- <a href="#product-disclosures" onclick="showContent('product-disclosures')">Product Disclosures</a> -->
+                <a href="#acceptable-use" onclick="showContent('acceptable-use')">Acceptable Use Policy</a>
+                <!-- <a href="#sub-processor" onclick="showContent('sub-processor')">Sub-Processor List</a> -->
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <button class="dropdown-button">For Influencers ▼</button>
+            <div class="dropdown-content">
+                <a href="#influencer-terms" onclick="showContent('influencer-terms')">Terms of Use for Influencers</a>
+                <a href="#influencer-privacy" onclick="showContent('influencer-privacy')">Privacy Policy for Influencers</a>
+            </div>
+        </div>
     </header>
 
-    <!-- Dropdown for 'For Everyone' -->
-    <div class="dropdown">
-        <button class="dropdown-button">For Everyone ▼</button>
-        <div class="dropdown-content">
-            <a href="#privacy-policy" onclick="toggleContent('privacy-policy')">Privacy Policy</a>
-            <a href="#cookies-policy" onclick="toggleContent('cookies-policy')">Cookies Policy</a>
-            <a href="#terms-of-use" onclick="toggleContent('terms-of-use')">Website Terms of Use</a>
+    <!-- Main Content Area -->
+    <main class="content" id="content">
+        <!-- Privacy Policy Information as Default Content -->
+        <div id="privacy-policy">
+            <h2>Privacy Policy</h2>
+            <p><strong>Last modified:</strong> November 9th, 2024</p>
+            <p><strong>IMPORTANT NOTE:</strong> The Spanish version of this document will govern our relationship - this translated version is provided for convenience only and will not be interpreted to modify the Spanish version.</p>
+            <p>DigitalDose, S.L., hereafter DigitalDose, is responsible for handling the information you provide. This Privacy Policy applies to data collected on our websites or through other channels. It describes how we collect, receive, use, store, share, transfer, and process personal information, per GDPR.</p>
+            <p>We periodically update this Privacy Policy. For questions, please contact us at DigitalDose.com.</p>
+            <h3>Data Processing Details</h3>
+            <ul>
+                <li>Data processing of customer representatives</li>
+                <li>Data processing of potential customers' representatives for advertising</li>
+                <li>Data treatment by contact through the form, email, or chat</li>
+                <li>Data processing of influencers</li>
+                <li>Data processing of CVs sent to jobs@DigitalDose.com</li>
+                <li>Data processing of social media interactions</li>
+                <li>Data processing of supplier representatives</li>
+                <li>Exercise of rights</li>
+                <li>Cookies and similar technologies</li>
+                <li>Data Protection Officer (DPO)</li>
+            </ul>
+            <p>If you believe DigitalDose has violated data protection laws, please contact us at legal@DigitalDose.com.</p>
         </div>
-    </div><br>
+        <div id="cookies-policy" style="display:none;">
+            <h2>Cookies Policy</h2>
+            <p><strong>Last modified:</strong> November 9th, 2024</p>
+            Cookies Policy
+IMPORTANT NOTE: The Spanish version of this document will govern our relationship - this translated version is provided for convenience only and will not be interpreted to modify the Spanish version. For the Spanish version, please see the Influencity Legal Stuff page.
 
-    <!-- Dropdown for 'For Customers' -->
-    <div class="dropdown">
-        <button class="dropdown-button">For Customers ▼</button>
-        <div class="dropdown-content">
-            <a href="#terms-conditions" onclick="toggleContent('terms-conditions')">Terms & Conditions of Services</a>
-            <a href="#data-processing" onclick="toggleContent('data-processing')">Data Processing Agreement</a>
-            <a href="#product-privacy" onclick="toggleContent('product-privacy')">Product Privacy Policy</a>
-            <a href="#product-disclosures" onclick="toggleContent('product-disclosures')">Product Disclosures</a>
-            <a href="#acceptable-use" onclick="toggleContent('acceptable-use')">Acceptable Use Policy</a>
-            <a href="#sub-processor" onclick="toggleContent('sub-processor')">Sub-Processor List</a>
+ 
+
+Like other websites, www.influencity.com (the “Website”) uses a technology called cookies to collect information about its use by users. The person responsible for processing this information is Influencity, S.L., with address at Calle Ribera 1, Entlo. 1 y 2, Valencia, 46002, Spain.
+
+We inform you that we can use them on your device on condition that you have given your consent, except in the cases in which they are necessary for using the Website.
+
+For this purpose, we indicate that the use of different cookies through our Website allows us to study your browsing habits and show you content that may be of interest to you, collect usage statistics to identify potential improvements to the Website and errors thereof, facilitate navigation through the Website and provide you with a better user experience. In short, cookies allow us to have more information about your preferences and to personalize our Website in accordance with your interests and those of other users.
+
+ 
+
+Definition
+A cookie is a file that is downloaded to your terminal equipment in order to store data that can be updated and retrieved by the entity responsible for its installation. Unless you have configured your browser to disable them, our system will use them as long as you visit our Website and have accepted its installation.
         </div>
-    </div><br>
 
-    <!-- Dropdown for 'For Influencers' -->
-    <div class="dropdown">
-        <button class="dropdown-button">For Influencers ▼</button>
-        <div class="dropdown-content">
-            <a href="#influencer-terms" onclick="toggleContent('influencer-terms')">Terms of Use for Influencers</a>
-            <a href="#influencer-privacy" onclick="toggleContent('influencer-privacy')">Privacy Policy for Influencers</a>
+        <!-- Terms of Use Section -->
+        <div id="terms-of-use" style="display:none;">
+            <h2> Terms of Use</h2>
+            <p><strong>Last modified:</strong> November 9th, 2024</p>
+            <p>By accessing this website, you agree to abide by the following terms of use. You may not use the content on this site for commercial purposes without prior permission.</p>
+            <p>Influencity reserves the right to modify these terms at any time. Continued use of the website implies acceptance of updated terms.</p>
         </div>
-    </div>
+        <div id="terms-conditions" style="display:none;">
+            <h2>Terms-conditions</h2>
+            <p><strong>Last modified:</strong> November 9th, 2024</p>
+            IMPORTANT NOTE: The Spanish version of this document will govern our relationship - this translated version is provided for convenience only and will not be interpreted to modify the Spanish version.  For the Spanish version, please see the Influencity Legal Stuff page.
 
-    <!-- Content Sections -->
-    <div id="privacy-policy" class="content-section">
-        <h2>Privacy Policy</h2>
-        <p>Information on our data handling and GDPR compliance practices.</p>
-    </div>
+ 
 
-    <div id="cookies-policy" class="content-section">
-        <h2>Cookies Policy</h2>
-        <p>Details on the use of cookies on our site and how to manage them.</p>
-    </div>
+PLEASE READ THESE CUSTOMER TERMS OF SERVICE CAREFULLY.
 
-    <div id="terms-of-use" class="content-section">
-        <h2>Website Terms of Use</h2>
-        <p>Guidelines and terms governing your use of our website and services.</p>
-    </div>
+The general contracting conditions hereby apply for any use of Influencity products, developed by INFLUENCITY, S.L., by the CLIENT or “the Customer”, whose identity data will be documented in the particular contract conditions, order form, sign up form, or in the consent form.
 
-    <div id="terms-conditions" class="content-section">
-        <h2>Terms & Conditions of Services</h2>
-        <p>Our service terms provide detailed information on the obligations of both parties.</p>
-    </div>
+Influencity, S.L., hereafter INFLUENCITY or Influencity, is an entity of Spanish nationality whose registered office is in Valencia, Ribera 1, Entlo. 1 y 2, tax ID number ESB98684574, and whose main activity consists of developing and operating services related with influencers marketing.
 
-    <div id="data-processing" class="content-section">
-        <h2>Data Processing Agreement</h2>
-        <p>This agreement covers data handling practices when using our services.</p>
-    </div>
+This is a contract between you (the Customer) and us (Influencity). It describes the services we will provide to you, how we will work together, and other aspects of our business relationship. It is a legal document so some of the languages are necessarily “legalese”, but we have tried to make it as readable as possible. These terms are so important that we cannot provide our products and services to you unless you agree to them. By using the Subscription Service or receiving the Consulting Services, you are agreeing to these terms.
 
-    <div id="product-privacy" class="content-section">
-        <h2>Product Privacy Policy</h2>
-        <p>Our product privacy policy ensures the protection of your personal data in our products.</p>
-    </div>
+We periodically update these terms. If you have an active Influencity subscription, we will let you know when we do via an email or in-app notification.
 
-    <div id="product-disclosures" class="content-section">
-        <h2>Product Disclosures</h2>
-        <p>Find the latest information about our products here.</p>
-    </div>
+Finally, we know legal terms can sometimes be difficult to navigate, so we wanted to give you a roadmap of the Agreement:
 
-    <div id="acceptable-use" class="content-section">
-        <h2>Acceptable Use Policy</h2>
-        <p>This policy sets forth the acceptable usage guidelines for our services.</p>
-    </div>
+ 
 
-    <div id="sub-processor" class="content-section">
-        <h2>Sub-Processor List</h2>
-        <p>Review the list of our sub-processors and their roles in data handling.</p>
-    </div>
+A. DEFINITIONS. This is where we provide the detail on what the key defined terms in the Agreement mean. You can think of this kind of like a contractual dictionary.
 
-    <div id="influencer-terms" class="content-section">
-        <h2>Terms of Use for Influencers</h2>
-        <p>Policies and guidelines specifically tailored for influencers.</p>
-    </div>
+B. GENERAL COMMERCIAL TERMS. Here’s where you can find the basics about how our Subscription Service and Consulting Services are provided. For example, you can find information on access and acceptable use. These terms apply to all of our products and service offerings.
 
-    <div id="influencer-privacy" class="content-section">
-        <h2>Privacy Policy for Influencers</h2>
-        <p>Data privacy information and terms relevant for influencers.</p>
-    </div>
+C. SUBSCRIPTION TERMS. Customers of ours subscribe to use our software (yep, it’s SaaS), and there are some fundamental terms that apply to each subscription. There are some differences between the different types of subscriptions, and here’s where you can find that detail.
+
+D. PRODUCT DISCLOSURES.  We offer several different products and there are some important things to know before you use them. We’ve collected these important things to know and you can find them here.
+
+E. GENERAL LEGAL TERMS. As we mention above, this is a contract, and contracts are filled with legal terms. In this section, we’ve collected the many of the remaining legal terms that make up our Customer Terms of Service.
+
+F. JURISDICTION SPECIFIC TERMS. With customers across the globe, this final section is where we address most of the differences in these terms that vary based on customer location.
+
+ 
+
+A. DEFINITIONS
+
+"Affiliate" means any entity which directly or indirectly controls, is controlled by, or is under common control with a party to this Agreement. For purposes of this definition, control means direct or indirect ownership or control of more than 50% of the voting interests of the subject entity.
+
+"Agreement" means these Customer Terms of Service and all materials referred or linked to in here. 
+
+"Billing Period" means the period for which you agree to prepay fees under an Order Form, which will be the same as or shorter than the Subscription Term as specified in the Order Form. For example, if you subscribe to the Subscription Service for a one (1) year Subscription Term, with a twelve (12) month upfront payment, the Billing Period will be twelve (12) months.
+
+"Communication Services" means third-party forums, online communities, blogs, personal web pages, calendars, and/or other social media communication facilities (such as Facebook, Twitter and LinkedIn) linked to or from the Subscription Service that enables you to communicate with the public or with a private group.  
+
+“Confidential Information” means all confidential information disclosed by a party ("Disclosing Party") to the other party ("Receiving Party"), whether orally or in writing, that is designated as confidential. Confidential Information shall include all information concerning: (a) Disclosing Party's customers and potential customers, past, present or proposed products, marketing plans, engineering and other designs, technical data, business plans, business opportunities, finances, research, development, and the terms and conditions of this Agreement. Confidential Information shall not include any information that (i) is or becomes generally known to the public without breach of any obligation owed to the Disclosing Party, (ii) was known to the Receiving Party prior to its disclosure by the Disclosing Party without breach of any obligation owed to the Disclosing Party, (iii) is received from a third party without breach of any obligation owed to the Disclosing Party, or (iv) was independently developed by the Receiving Party. Subject to the foregoing exclusions, Customer Data shall be Confidential Information under this Agreement regardless of whether or not it is designated as confidential.
+
+"Influencer" means a single individual (other than a User) whose Contact Information is stored by you in the Subscription Service.
+
+"Contact Information" means the name, email address, phone number, online user name(s), telephone number, and similar information submitted by you or uploaded by you to the Subscription Service.
+
+"Consulting Services" means the professional services provided to you by us, which may include training services, installation, integration or other consulting services.
+
+"Customer Data" means all information that you submit or collect via the Subscription Service. Customer Data does not include Influencity Content.
+
+"Customer Materials" means all materials that you provide or post, upload, input or submit for public or private display through the Subscription Service.
+
+“DPA” means the Influencity Data Processing Agreement at https://influencity.com/legal/data-processing-agreement.
+
+"Email Send Limit" means the number of emails that you may send in any given calendar month specified in your Subscription Plan.
+
+“Enrichment Data” means the influencer level information we make available to you as part of the Subscription Service obtained from public or third party sources.  Enrichment Data does not include Personal Data. You’ll recognize Enrichment Data in the Influencity IRM because it is flagged with a grey information icon (or highlighted in some other way), which on hover, identifies the property as being filled from Influencity’s Insights database.
+
+“Free Services” means the Subscription Service or other products or features made available by us to you on an unpaid trial or free basis.
+
+“Full-Enterprise Products” means our Custom Enterprise product.
+
+"Influencity Content" means all information, data, text, messages, software, sound, music, video, photographs, graphics, images, and tags that we incorporate into the Subscription Service or Consulting Services, including Enrichment Data.
+
+"Maximum Influencers" means the maximum number of Influencers you are permitted to use with the Subscription Service as identified in your Order Form, plus any Influencers added as part of an upgrade.
+
+"Order" or "Order Form" means the Influencity-approved form or online subscription process by which you agree to subscribe to the Subscription Service and purchase Consulting Services. Most Orders are completed through our online payment process or via in-app purchase. The Order may be referred to as a "Statement of Work" if you are purchasing only Consulting Services.
+
+“Paid Users” means those types of Users (defined below) for which we charge you fees as set forth in our Product and Subscription Plan.
+
+“Personal Data” means any information relating to an identified or identifiable individual where such information is contained within Customer Data and is protected similarly as personal data or personally identifiable information under applicable Data Protection Law.
+
+“Subscription Plan or Pricing Plan” means Influencity’s Product features and pricing available at https://influencity.com/pricing, as updated by us from time-to-time.
+
+"Sensitive Information" means (a) credit or debit card numbers; personal financial account numbers or wire instructions; Social Security numbers or local equivalents; passport numbers; driver’s license numbers or similar identifiers; passwords or log-in credentials; racial or ethnic origin; physical or mental health condition or information; or other employment or health information, including any information subject to the Health Insurance Portability and Accountability Act, the Payment Card Industry Data Security Standards, and other regulations, laws or industry standards designed to protect similar information; and (b) any information defined under European Data Protection Laws (as this term is defined in the DPA) as sensitive personal data (including special categories of personal data enumerated in European Union Regulation 2016/679, Article 9(1) or any successor legislation).
+
+"Subscription Fee" means the amount you pay for the Subscription Service.
+
+"Subscription Service" means all of our web-based influencer marketing applications, tools and platforms that you have subscribed to by an Order Form or that we otherwise make available to you, and are developed, operated, and maintained by us, accessible via Influencity.com or another designated URL, and any ancillary products and services, including website hosting, that we provide to you.
+
+"Subscription Term" means the initial term of your subscription to the applicable Subscription Service, as specified on your Order Form(s), and each subsequent renewal term (if any). For Free Services, the Subscription Term will be the period during which you have an account to access the Free Services.
+
+“Platform” means the technological platform owned and operated by Influencity through which the Customer has access to the Subscription Services and other services provided by Influencity.
+
+"Third-Party Products" means non-embedded products and professional services that are provided by third parties which interoperate with or are used in connection with the Subscription Service. These products and services include non-Influencity apps available.
+
+"Third-Party Sites" means third-party websites linked to from within the Subscription Service, including Communications Services.
+
+“Total Committed Subscription Value” means the aggregate amount of Subscription Fees paid or payable to us during your then-current Subscription Term(s) for all of your Influencity accounts, but this amount excludes fees for renewals, Consulting Services and applicable taxes.
+
+"Users" means your employees, representatives, consultants, contractors or agents who are authorized to use the Subscription Service for your benefit and have unique user identifications and passwords for the Subscription Service.
+
+"Influencity", "we", "us" or “our” means the applicable contracting entity as specified in the ‘Contracting Entity and Applicable Law’ section.
+
+"You", "your" or “Customer” means the person or entity using the Subscription Service or receiving the Consulting Services and identified in the applicable account record, billing statement, online subscription process, or Order Form as the customer.
+
+ 
+        </div>
+        <div id="data-processing" style="display:none;">
+            <h2>Data processing</h2>
+            <p><strong>Last modified:</strong> November 9th, 2024</p>
+            IMPORTANT NOTE: The Spanish version of this document will govern our relationship - this translated version is provided for convenience only and will not be interpreted to modify the Spanish version.  For the Spanish version, please see the Influencity Legal Stuff page.
+
+ 
+
+            This Influencity Data Processing Agreement and its Annexes (“DPA”) reflects the parties’ agreement with respect to the Processing of Personal Data by Influencity on behalf of Customer in connection with the Influencity Subscription Services under the Influencity Customer Terms of Service between Influencity and Customer (the “Agreement”).  
+            
+            This DPA is supplemental to, and forms an integral part of, the Agreement and is effective upon its incorporation into the Agreement, which incorporation may be specified in the Agreement, an Order or an executed amendment to the Agreement. In case of any conflict or inconsistency with the terms of the Agreement, this DPA shall take precedence over the terms of the Agreement to the extent of such conflict or inconsistency.
+            
+            We periodically update these terms. If you have an active Influencity subscription, we will let you know when we do via email (if you have subscribed to receive email notifications via the link in our Agreement) or via in-app notification.
+            
+            The term of this DPA shall follow the term of the Agreement. Terms not otherwise defined herein shall have the meaning as set forth in the Agreement.
+            
+             
+            
+            1. Definitions
+            “Controller” means the natural or legal person, public authority, agency or other body which, alone or jointly with others, determines the purposes and means of the Processing of Personal Data.
+            
+            “Data Protection Laws” means all applicable worldwide legislation relating to data protection and privacy which applies to the respective party in the role of Processing Personal Data in question under the Agreement, including without limitation European Data Protection Laws.
+            
+            “Data Subject” means the individual to whom Personal Data relates.
+            
+            "Europe" means the European Union, the European Economic Area and/or their member states, Switzerland and the United Kingdom. 
+            
+            “European Data” means Personal Data that is subject to the protection of European Data Protection Laws.
+            
+            "European Data Protection Laws" means data protection and Europe, including: (i) Regulation 2016/679 of the European Parliament and of the Council on the protection of natural persons with regard to the processing of personal data and on the free movement of such data (General Data Protection Regulation) ("GDPR"); (ii) Directive 2002/58/EC concerning the processing of personal data and the protection of privacy in the electronic communications sector; and (iii) applicable national implementations of (i) and (ii); or (iii) in respect of the United Kingdom, any applicable national legislation that replaces or converts in domestic law the GDPR or any other law relating to data and privacy as a consequence of the United Kingdom leaving the European Union; and (iv) Swiss Federal Data Protection Act on 19 June 1992 and its Ordinance; in each case, as may be amended, superseded or replaced.  
+            
+            “Instructions” means the written, documented instructions issued by a Controller to a Processor, and directing the same to perform a specific or general action with regard to Personal Data (including, but not limited to, depersonalizing, blocking, deletion, making available).
+            
+            "Permitted Affiliates" means any of Customer's Affiliates that (i) are permitted to use the Subscription Services pursuant to the Agreement, but have not signed their own separate agreement with Influencity and are not a “Customer” as defined under the Agreement, (ii) qualify as a Controller of Personal Data Processed by Influencity, and (iii) are subject to European Data Protection Laws.
+            
+            “Personal Data” means any information relating to an identified or identifiable individual where such information is contained within Customer Data and is protected similarly as personal data, personal information or personally identifiable information under applicable Data Protection Laws.
+            
+            “Personal Data Breach” means a breach of security leading to the accidental or unlawful destruction, loss, alteration, unauthorized disclosure of, or access to, Personal Data transmitted, stored or otherwise Processed by Influencity and/or its Sub-Processors in connection with the provision of the Subscription Services. "Personal Data Breach" shall not include unsuccessful attempts or activities that do not compromise the security of Personal Data, including unsuccessful log-in attempts, pings, port scans, denial of service attacks, and other network attacks on firewalls or networked systems.
+            
+            “Processing” means any operation or set of operations which is performed on Personal Data, encompassing the collection, recording, organization, structuring, storage, adaptation or alteration, retrieval, consultation, use, disclosure by transmission, dissemination or otherwise making available, alignment or combination, restriction or erasure of Personal Data. The terms “Process”, “Processes” and “Processed” will be construed accordingly.
+            
+            “Processor” means a natural or legal person, public authority, agency or other body which Processes Personal Data on behalf of the Controller.
+            
+            “Standard Contractual Clauses” means the standard contractual clauses for Processors approved pursuant to the European Commission’s decision of 4.6.2021 on standard contractual clauses between controllers and processors under Article 28 (7) of Regulation (EU) 2016/679 of the European Parliament and of the Council and Article 29 (7) of Regulation (EU) 2018/1725 of the European Parliament and of the Council.
+            
+            “Sub-Processor” means any Processor engaged by Influencity or its Affiliates to assist in fulfilling Influencity's obligations with respect to the provision of the Subscription Services under the Agreement.  Sub-Processors may include third parties or Influencity Affiliates but shall exclude any Influencity employee or consultant.  
+            
+            “Sub-Processors List” means Influencity’s Sub-Processors List available at https://influnencity.com/legal/sub-processors-list.
+            
+             
+            
+            2. Processing information
+            a. Stakeholder categories. The controller may submit personal data to the Subscription Service, insofar as they are determined and controlled by it in its absolute discretion, including, without limitation, contacts and other end users, such as employees, contractors, collaborators, clients, influencers. , suppliers and subcontractors of the controller. Interested parties are also those who attempt to communicate or transfer personal data to the controller's end users
+            
+            b. Types of personal data. Contact information (as defined in the Terms and Conditions of Service for Influencity clients), insofar as it is determined and controlled by the client in its sole discretion, and other personal data, such as browsing data (including website usage information), email data, system usage data, application integration data, and other electronic data sent, saved, or received by end users through the Subscription Service.
+            
+            c. Nature and purpose of the processing. The purpose of the processing of personal data by the processor is to provide services to the controller involved in the processing of personal data. Personal data will be subject to those processing activities, as specified in the Agreement or in a Purchase Order.
+            
+            d. Purpose of the processing. Personal data will be processed to provide the established services, to the extent indicated by the Controller and its use of the services, and agreed in the Agreement and in any corresponding Purchase Order.
+            
+            e. Duration of processing. Personal data will be processed during the term of the Agreement, pursuant to Section 4 of this DPA.
+            
+             
+        </div>
+        <div id="product-privacy" style="display:none;">
+            <h2>Product Privacy</h2>
+            <p><strong>Last modified:</strong> November 9th, 2024</p>
+            IMPORTANT NOTE: The Spanish version of this document will govern our relationship - this translated version is provided for convenience only and will not be interpreted to modify the Spanish version.  For the Spanish version, please see the Influencity Legal Stuff page.
+
+ 
+
+Influencity, S.L., hereafter Influencity, is an entity of Spanish nationality whose registered office is in Valencia, Ribera 1, Entlo. 1 y 2, tax ID number ESB98684574, is responsible of the treatment of the information you provide us.
+
+We at Influencity and our affiliates listed on this page are committed to protecting your privacy. This Product Privacy Policy applies to your use of the Influencity Subscription Service (the Subscription Service) as a customer of Influencity. This Privacy Notice describes how we collect, receive, use, store, share, transfer, and process your personal information. It also describes your choices regarding use, as well as your rights of access and correction of your personal information.  
+
+This Product Privacy Policy applies to the data Influencity processes on behalf of our customers (Customer Data) in our capacity as a processor. This Product Privacy Policy does not apply to any information or data collected by Influencity as a controller for other purposes, such as information collected on our websites or through other channels for marketing purposes. Please find the Influencity Privacy Policy that covers this information or data by clicking here.
+
+Influencity processes Customer Data under the direction of our Customers, and has no direct control or ownership of the personal data we process. Customers are responsible for complying with any regulations or laws that require providing notice, disclosure, and/or obtaining consent prior to transferring the data to Influencity for processing purposes. Terms not otherwise defined herein shall have the meaning as set forth in the Influencity Customer Terms of Service (the ‘Agreement’). In the event of a conflict between this Product Privacy Policy and the Agreement, the terms of the Agreement will control.
+
+We periodically update this Product Privacy Policy. We will post any changes on this page and, if the changes are material, we will provide an update through the Notification app in your Influencity portal. While we will notify you of any material changes to this Product Privacy Policy prior to the changes becoming effective, we encourage you to review this policy periodically. We will also keep prior versions of this Product Privacy Policy in an archive for your review.
+
+ 
+
+1. Use of the Subscription Service 
+The Influenctity Subscription Service
+Our online Subscription Service allows users (typically small to medium size businesses) to search influencers, get audience insights and influencer performance, create and manage influencer marketing campaigns, and track influencer posts. The Subscription Service can also be used to help organize influencer data about a company’s marketing strategy (e.g., influencers, posts, campaigns, etc.). The information added to the Subscription Service, either by influencers providing their contact information or when a Subscription Service user adds the information, is stored and managed on our service providers' servers. Influencity provides the Subscription Service to our customers for their own marketing and customer service needs.
+
+Use by Influencity
+We use our own Subscription Service to build influencer campaigns that people can learn more about Influencity. Information that we collect and manage using the Subscription Service for our own marketing belongs to us and is used, disclosed and protected according to the Influencity Privacy Policy.
+
+Use by Our Customers
+Our customers use the Subscription Service to build influencer campaigns that people can learn more about their business. When customers use the Subscription service, they may collect Personal Information such as first and last name, email address, physical address, or phone number. Influencity does not control the content or the types of information that our customers may choose to collect or manage using the Subscription Service. That information belongs to them and is used, disclosed and protected by them according to their privacy policies. Influencity processes our customers' information as they direct and in accordance with our agreements with our customers, and we store it on our service providers' servers.
+Our agreements with our customers prohibit us from using that information, except as necessary to provide and improve the Subscription Service, as permitted by this Product Privacy Policy, and as required by law.
+We use the information collected through our Subscription Service by our customers for the following purposes: to provide the Subscription Service (which may include the detection, prevention and resolution of security and technical issues); to respond to customer support requests; and otherwise to fulfill the obligations under the Influencity Customer Terms of Service.
+We have no direct relationship with individuals, “Influencers”, who provide Personal Information to our customers. Our customers control and are responsible for correcting, deleting or updating information they have collected from using the Subscription Service. We may work with our customers to help them provide notice to their influencers about their data collection, processing and usage.
+
+ 
+
+2. How we Share Information we Collect
+A. With Service Providers
+We employ other third-party service providers to provide services on our behalf to visitors to our Websites and our customers and users of the Subscription Service and may need to share your information with them to provide information, products or services to you. Examples may include removing repetitive information from influencer lists, analyzing data or performing statistical analysis, providing marketing assistance, processing credit card payments, supplementing the information you provide us in order to provide you with better service, and providing customer service or support. These service providers are prohibited from using your Personal Information except for these purposes, and they are required to maintain the confidentiality of your information. In all cases where we share your information with such agents, we explicitly require the agent to acknowledge and adhere to our privacy and customer data handling policies. Examples of these third-party service providers can be found on this page.
+
+B. Due to Corporate Events
+If we (or our assets) are acquired by another company, whether by merger, acquisition, bankruptcy or otherwise, that company would receive all information gathered by Influencity on the Websites and the Subscription Service. In this event, you will be notified via email and/or a prominent notice on our website, of any change in ownership, uses of your Personal Information, and choices you may have regarding your Personal Information.
+
+C. In Accordance with Compelled Disclosure
+We reserve the right to use or disclose your Personal Information if required by law or if we reasonably believe that use or disclosure is necessary to protect our rights, protect your safety or the safety of others, investigate fraud, or comply with a law, court order, or legal process.
+
+ 
+
+3. Influencity Product Specific Privacy Disclosures
+A. All Product Tiers 
+i. Third Parties
+
+We may provide links within our sites and services to the sites or services of third parties. We are not responsible for the collection, use, monitoring, storage or sharing of any personal information by such third parties, and we encourage you to review those third parties' privacy notices and ask them questions about their privacy practices as they relate to you.
+
+ii. Google Integrations
+
+If you choose to integrate your Gmail or any other G Suite application with the Subscription Service you may use the following integrations and allow Influencity access to your Google user data:
+
+(1) Gmail Integration
+By using the ‘Gmail Integration’ with the Subscription Service you will grant the Subscription Service access to information associated with your account, including contacts, emails, calendar, distribution lists, subject lines, and URLs of tracked links from your email, if you use the email tracking functionality. In addition, the Subscription Service will be able to read, modify, create, and send emails from your connected Gmail account. The Subscription Service will scan the content of your emails to identify which emails you have elected to track in order to provide you with the notifications feature. The Subscription Service will store replies, outgoing mail, email headers, subject line, distribution lists, aliases, time sent, and Email bodies. Your email may contain sensitive information, such as names of your contacts, your private communications, or financial or medical information. You understand that the correspondences you track will be visible to other users on your Subscription team.
+
+If you connect your Gmail account via IMAP (or Generic Inbox Connection), the Subscription Service will have access only to email address, password, server information, email metadata, and message bodies. Additionally, connecting your Gmail account via IMAP does not require you to connect any other G Suite applications.
+
+Additional Limits on Use of Your Google user Data:
+Notwithstanding anything else in this Product Privacy Policy, if you provide Influencity with access to your Gmail data using the Gmail Integration, our use of that data will be subject to these additional restrictions:
+
+We will only use access to read, write, modify or control Gmail message bodies (including attachments), metadata, headers, and settings to provide a web email client that allows users to compose, send, read, and process emails and to enhance the email experience for productivity purposes.
+
+We will not transfer this Gmail data to others unless doing so is necessary to provide and improve these features, comply with applicable law, or as part of a merger, acquisition, or sale of assets.
+
+Influencity will not use this Gmail data for serving advertisements.
+
+Influencity will not allow humans to read this data unless we have your affirmative agreement for specific messages, doing so is necessary for security purposes such as investigating abuse, to comply with applicable law, or for Influencity's internal operations when the data have been aggregated and anonymized.
+
+(2) Google Calendar Integration
+The Subscription Service will have access to both your Google Calendar and any other calendar you access via Google in order to power our Media Plan tool, and allow you to associate events with influencers in the IRM. The Subscription Service will have the ability to: create or change your calendars, and update individual calendar events.
+
+(3) Google Drive Integration
+As part of connecting your Google Drive, the Subscription Service will be able to: see your files, upload and download your files, and store file contents and titles. The Subscription Service uses these permissions to power the features of our Documents and Content tools, allowing you to create drafts of briefing or posts in Drive and then upload directly for publishing.
+
+(4) Google Search Console
+You can integrate your Google Search Console with our Content Management System (CMS). As part of this integration, the Subscription Service will be able to: manage the list of sites and domains you control, view and manage the list of sites and domains you control, view and manage the owners of domains you control.
+
+(5) Chrome Extensions
+Email Extension: you can install the Influencity Email Chrome extension to track Gmail and G Suite emails through your Chrome browser. The extension can read and change all your data on the websites you visit and display notifications. It logs all emails from Gmail and can be used in conjunction with the Inbox Integration.
+
+Document Extension: the Collect Extension integrates with your Google Drive, allowing you to upload files and text directly from your Chrome Browser into your drive. These files will then be available for your use through the Google Drive integration.
+
+Social Extension: The Influencity Social Chrome Extension allows checking influencer insights directly from the Social Network and add influencers to your IRM. You are able to assign influencers to campaigns, and lists. The Social extension only accesses information about the current page, after its toolbar button is clicked, utilizing the permissions granted here: https://developer.chrome.com/extensions/activeTab#motivation
+
+iii. Influencity Email Outlook Add-In
+
+If you use the Outlook integration with the Influencity Product, the Subscription Service will have access to information associated with your account, including contacts, emails, calendars, distribution lists, subject lines, and URLs of tracked links from your email, if you use the email tracking functionality. The Influencity Product will scan the content of your emails to identify which emails you have elected to track in order to provide you with the Notifications feature. The Subscription Service will store, replies, outgoing mail, email headers, subject line, distribution lists, aliases, time sent, and message bodies. Correspondences you track will be visible to other Users on your Subscription.
+
+iv. Generic Inbox Connection (IMAP)
+
+If you connect your email account via IMAP (or Generic Inbox Connection), the Subscription Service will have access only to the email address, password, server information, email metadata, and message bodies. Additionally, connecting your Outlook account via IMAP does not require you to connect any other Microsoft applications.
+
+v. Crowdsourced Data
+
+If you use our Influencity IRM, you may see fields in our influencer database marked with a pink/purple dot, or highlighted in some other way. These fields are those that we let our Influencity IRM users update, to aim to keep our influencer database as current as possible. Crowdsourced Data fields only capture influencer level information, and are not intended to collect personally identifiable information. If you choose to submit updated information to these fields, you grant us the right to use such information in any manner that we choose (including, without limitation, publicly), without any payment or attribution to you. You represent and warrant that you have a right to share such information with us for our use and that you are not violating any confidentiality obligations by submitting the information. This information submitted by you will not be considered Customer Data or Confidential Information under this Agreement.
+
+vi. Documents Tool
+
+If you use the Documents feature of the Subscription Service, files that you upload using this ‘Documents’ feature are stored by us and shared with other users of your Influencity IRM team.
+
+vii. Contents
+
+If you choose to use the content validation feature of our Content functionality you understand that any User may have access to or visibility into the contents of this feature.
+
+B. Social Integrations for Customers
+i. Youtube Integration
+
+If you use the YouTube Integration, you agree to be bound by YouTube's terms, available at: https://www.youtube.com/t/terms. 
+
+You choose to connect your YouTube account with the Influencity Platform in order to manage your YouTube account:
+
+i. a. As part of sending messages to YouTube through the Subscription Service, the Influencity platform will store your messages and send them at the scheduled time as selected by you.
+
+i. b. As part of uploading videos to YouTube through the Subscription Service, the Influencity platform will upload your video at the scheduled time as selected by you. Additionally, the Subscription Service will add tracking code to any post URL generated through the Influencity Platform, solely for the purpose of tracking clicks. The Subscription Service store comments and replies on your posts, as well as analytics for the performance of your posts. You agree that the performance of these posts will be shared or made public at our sole discretion.
+
+ii. Twitter Integration
+If you use the Twitter Integration, you agree to be bound by Twitter’s terms, available at: 
+
+You may choose to integrate your Twitter account with the Influencity Platform in order to manage your Twitter:
+
+ii. a. As part of sending messages or posting Tweets through the Subscription Service, the Influencity platform will store your messages and Tweets, and post Tweets upon their scheduled time as selected by you.
+
+ii. b. As part of posting Tweets through the Subscription Service, the Influencity platform will store your Tweets and post Tweets upon their scheduled time as selected by you. Additionally, the Subscription Service will add tracking code to any Tweet URL generated through the Influencity Platform, solely for the purpose of tracking clicks. The Subscription Service will store replies to and analytics for the performance of your Tweets. You agree that the performance of these posts will be shared or made public at our sole discretion.
+        </div>
+        
+        <div id="acceptable-use" style="display:none;">
+            <h2>Acceptable use</h2>
+            <p><strong>Last modified:</strong> November 9th, 2024</p>
+            IMPORTANT NOTE: The Spanish version of this document will govern our relationship - this translated version is provided for convenience only and will not be interpreted to modify the Spanish version.  For the Spanish version, please see the Influencity Legal Stuff page.
+
+ 
+
+This Influencity Acceptable Use Policy ("AUP") applies to the use of any product, service or website provided by us, Influencity, S.L., hereafter Influencity, whether we provide it directly or use another party to provide it to you (each, an "Influencity Service"). This AUP is designed to ensure compliance with the laws and regulations that apply to the Influencity Service. This AUP also protects the interests of all of our clients and their customers, as well as our goodwill and reputation. These terms are so important that we cannot provide the Influencity Service unless you agree to them. By using the Influencity Service, you are agreeing to these terms.
+
+If you are using any Influencity Service, this AUP applies to you. Every client of ours agrees to abide by this AUP and is responsible for any violations. You are not allowed to assist or engage others in a way that would violate this AUP. We will enforce and ensure compliance with this AUP by using methods we consider to be appropriate, such as complaint and email failure monitoring.  We may also suspend or terminate your use of Influencity Services pursuant to our Customer Terms of Service for violations of this AUP. 
+
+We periodically update these terms and we will let you know when we do through the Notification app in the Influencity portal used to access your Influencity subscription (if you have one), or by posting a revised copy on our website. You agree to review the AUP on a regular basis and always remain in compliance.
+
+ 
+
+1. Reporting Suspected Violations
+We encourage recipients of email messages sent using the Influencity Service to report suspected violations of this AUP to us by forwarding a copy of the received email with FULL headers to legal@influencity.com. We have a policy to investigate all of these reports and to respond in the way we consider appropriate. 
+
+If you know of or suspect a violation of this AUP, you will promptly notify us in writing of the known or suspected violation of this AUP.
+
+ 
+
+2. Prohibited Email Actions 
+a. You may not use Influencity to send spam. Spam can be in the form of bulk email or one to one commercial emails.
+
+Bulk email is spam when it is unsolicited. Unsolicited means the recipient has not granted verifiable permission for the message to be sent. Bulk means that the message is sent as part of a larger collection of messages that have substantively similar content.
+
+One-to-one commercial emails are spam when they violate CAN-SPAM. One-to-one commercial emails are also considered Spam if the data processed for purposes of sending that email is in the scope of the General Data Protection Regulation (‘GDPR’) and you fail to provide notice to individuals and establish a lawful basis of processing.
+
+You may not use the Influencity Service in any way (directly or indirectly) to send, transmit, handle, distribute or deliver: (a) spam in violation of the CAN-SPAM Act (referenced below) or any other law; (b) email to an address obtained via Internet harvesting methods or any surreptitious methods (e.g., scraping or harvesting); (c) email to an address that is incomplete, inaccurate and/or not updated for all applicable opt-out notifications, using best efforts and best practices in the industry, (d) commercial electronic messages in violation of Canada’s Anti-Spam Legislation (referenced below), or (e) in violation of the General Data Protection Regulation (GDPR).
+
+ 
+
+b. You may not use any misleading or false names, addresses, email addresses, or subject lines. 
+
+Email sent, or caused to be sent to or through the Influencity Service may not: (a) use or contain invalid or forged headers; (b) use or contain invalid or non-existent domain names; (c) employ any technique to otherwise misrepresent, hide or obscure any information in identifying the point of origin or the transmission path; (d) use other means of deceptive addressing; (e) use a third party's internet domain name without their consent, or be relayed from or through a third party's equipment without the third party’s permission; (f) contain false or misleading information in the subject line or otherwise contain false or misleading content; or (g) use our trademark(s), tagline(s), or logo(s) without our prior written consent and only then pursuant to our trademark usage guidelines.
+
+If you use email, we recommend that you adopt the Messaging, Malware and Mobile Anti-Abuse Working Group (M3AAWG) Sender Best Communications Practices (BCP), which were created and agreed upon with collaborative input from both volume email senders and Internet Service Providers. The Sender Best Communications Practices document is available here. You will use commercially reasonable efforts to follow these practices.
+
+ 
+
+c. You may not email purchase lists. 
+
+You are prohibited from using the Influencity Service to email: (a) purchased, rented, or borrowed lists, and (b) lists that are likely to result in an excessive number of unsubscribe requests or Spam complaints or notices, as determined by acceptable industry practices.
+
+ 
+
+3. Email Opt-out Requirements 
+You warrant that each email you send or is sent for you using the Influencity Service will contain: (a) header information that is not false or misleading; and (b) an advisement that the recipient may unsubscribe, opt-out or otherwise demand that use of its information for unsolicited, impermissible and/or inappropriate communication(s) as described in this AUP be stopped (and how the recipient can notify you that it wants to unsubscribe, opt-out, or stop this use of its information). These requirements may not apply if the email sent is a transactional email and these requirements are not otherwise required by law. You warrant that you will promptly comply with all opt-out, unsubscribe, "do not call" and "do not send" requests.
+
+ 
+
+4. No Disruption
+You agree not to use the Influencity Service in a way that impacts the normal operation, privacy, integrity or security of another's property.  Another’s property includes another’s account(s), domain name(s), URL(s), website(s), network(s), system(s), facilities, equipment, data, other information, or business operations.  You also agree not to use the Influencity Service to gain unauthorized access to, use, monitor, make an unauthorized reference to, another’s property, unless you have the appropriate express prior consent to do so.  Examples of prohibited actions include (without limitation): hacking, spoofing, denial of service, mailbombing and/or sending any email that contains or transmits any virus or propagating worm(s), or any malware, whether spyware, adware or other such file or program. You also agree not to use the Influencity Service in a way that causes or may cause any Influencity IP addresses, Influencity domains, or Influencity customer domains to be blacklisted.  These restrictions apply regardless of your intent and whether or not you act intentionally or unintentionally.
+
+ 
+
+5. Proper Usage of the Influencity Service
+You will respect the limits that apply to your use the Influencity Service as specified in the Product and Services Catalog available at https://influencity.com/pricing (the “Service Limits”). We may update or change these Service Limits by updating https://influencity.com/pricing, so we encourage you to review this page periodically.
+
+In addition, and without limiting the other requirements in this AUP, you may not (directly or indirectly) use the Influencity Service with content, or in a manner that:
+
+is threatening, abusive, harassing, stalking, or defamatory;
+
+is deceptive, false, misleading or fraudulent;
+
+is invasive of another's privacy or otherwise violates another’s legal rights (such as rights of privacy and publicity);
+
+contains vulgar, obscene, indecent or unlawful material;
+
+infringes a third party's intellectual property right(s);
+
+publishes, posts, uploads, or otherwise distributes any software, music, videos, or other material protected by intellectual property laws (or by rights of privacy or publicity) unless you have all necessary rights and consents to do so;
+
+uploads files that contain viruses, corrupted files, or any other similar software or programs that may damage the operation of another person's computer;
+
+downloads any file that you know, or reasonably should know, cannot be legally distributed in that way;
+
+falsifies or deletes any author attributions, legal or proprietary designations, labels of the origin or source of software, or other material contained in a file that is uploaded;
+
+restricts or inhibits any other user of the Influencity Service from using and enjoying our website and/or the Influencity Service;
+
+harvests or otherwise collects information about others, including e-mail addresses, without their consent;
+
+violates the usage standards or rules of an entity affected by your use, including without limitation any ISP, ESP, or news or user group (and including by way of example and not limitation circumventing or exceeding equipment use rights and restrictions and/or location and path identification detail);
+
+is legally actionable between private parties;
+
+is not a good faith use of the service, such as uploading Influencer Contacts in excess of your Influencer Contact tier, emailing those Influencer Contacts and then purging them shortly thereafter; and/or
+
+is in violation of any applicable local, state, national or international law or regulation, including all export laws and regulations and without limitation the Controlling the Assault of Non-Solicited Pornography and Marketing Act (CAN-SPAM Act) (15 U.S.C. § 7701 et seq.), the U.S Telephone Consumer Protection Act of 1991 (47 U.S.C. § 227), the Do-Not-Call Implementation Act of 2003 (15 U.S.C. § 6152 et seq.; originally codified at § 6101 note), the General Data Protection Regulation (2016/679), the Directive 2000/31/EC of the European Parliament and Council of 8 June 2000, on certain legal aspects of information society services, in particular, electronic commerce in the Internal Market ('Directive on Electronic Commerce'), along with the Directive 2002/58/EC of the European Parliament and Council of 12 July 2002, concerning the processing of personal data and the protection of privacy in the electronic communications sector ('Directive on Privacy and Electronic Communications'), regulations promulgated by the U.S. Securities Exchange Commission, any rules of national or other securities exchange, including without limitation, the New York Stock Exchange, the American Stock Exchange or the NASDAQ, the Personal Information Protection and Electronic Documents Act (PIPEDA) (S.C. 2000, c. 5), Canada’s Anti-Spam Legislation (CASL) (S.C. 2010, c. 23), Japan’s Act on Regulation of Transmission of Specified Electronic Mail (Act No. 26 of April 17, 2002) and any regulations having the force of law or laws in force in your or your email recipient's country of residence;
+
+encourages, promotes, facilitates or instructs others to engage in illegal activity;
+
+promotes, encourages, or facilitates: hate speech, violence, discrimination based on race, color, religion or creed, national origin or ancestry, sex, age, physical or mental disability, veteran status, genetic information, and/ or citizenship.
+
+If you use any of our developer tools including Application Programming Interfaces (APIs), developer tools, or associated software, you will comply with our Developer Terms at https://influencity.com/legal/influencity-developer-terms.
+
+You will use the Influencity Service for your internal business purposes and will not: (i) willfully tamper with the security of the Influencity Service or tamper with our customer accounts; (ii) access data on the Influencity Service not intended for you; (iii) log into a server or account on the Influencity Service that you are not authorized to access; (iv) attempt to probe, scan or test the vulnerability of any Influencity Service or to breach the security or authentication measures without proper authorization; (v) willfully render any part of the Influencity Service unusable; (vi) lease, distribute, license, sell or otherwise commercially exploit the Influencity Service or make the Influencity Service available to a third party other than as contemplated in your subscription to the Influencity Service; (vii) use the Influencity Service for timesharing or service bureau purposes or otherwise for the benefit of a third party; or (viii) provide to third parties any evaluation version of the Influencity Service without our prior written consent.
+
+ 
+
+6. Restricted Industries 
+Some industries have higher than average abuse complaints, which can directly impact our ability to provide the Influencity Service to other customers. To protect our customers, we reserve the right to discontinue your use of the Influencity Services if you are in one of these industries. Some examples include: 
+
+Cryptocurrency 
+
+Escort and dating services 
+
+Pharmaceutical products
+
+Work from home, make money online, and lead generating opportunities
+
+Gambling services or products 
+
+Multi-level marketing or affiliate marketing 
+
+List brokers or list rental services
+
+Selling 'Likes' or followers for a social media platform 
+
+ 
+        </div>
+        
+        <div id="influencer-terms" style="display:none;">
+            <h2> Terms Of Use  For Influencers Terms</h2>
+            <p><strong>Last modified:</strong> November 9th, 2024</p>
+            PLEASE READ THESE INFLUENCER TERMS OF USE CAREFULLY
+
+Influencity, S.L., hereafter INFLUENCITY or Influencity, is an entity of Spanish nationality whose registered office is in Valencia, Ribera 1, Entlo. 1 y 2, tax ID number ESB98684574, and whose main activity consists of developing and operating services related to influencer marketing.
+
+We periodically update these terms. If you have an active Influencity account, we will let you know when we do via an email or in-app notification.
+
+ 
+
+1. SCOPE
+1.1. These general terms and conditions of use for Influencers (the "General Terms for Influencers") are applicable between Influencity, S.L. ("INFLUENCITY"), and any individual who creates content to be published in a social network or other communication channel(s) and has certain popularity in the market who creates an account in our Website ("INFLUENCER"). By registering and using Infuencity’s products or services (which we refer to collectively as the “Services”), the Influencer agrees to these General Terms for Influencers.
+
+1.2. INFLUENCITY and the INFLUENCER, may be referred to jointly as the "Parties" and individually as the "Party".
+
+Note: If you are not an INFLUENCER but a Customer (as defined below), these General Terms for Influencers do not apply to the use of INFLUENCITY’s Services but our General Terms of Service available at the following link: https://influencity.com/legal/terms-of-service
+
+ 
+
+2. ELIGIBILITY
+2.1. The INFLUENCER represents and warrants to INFLUENCITY that it has the capacity to enter into these legally binding General Terms for Influencers. If INFLUENCER is an influencer representation agency acting on behalf of another person or entity, it hereby represents and warrants to INFLUENCITY that it has the authority to represent such person or entity and be bound to these General Terms for Influencers.
+
+2.2. The Services are only intended for, and should only be used by, anyone of legal age.
+
+2.3. INFLUENCER is solely responsible for ensuring that the use of the Platform and Services in INFLUENCER’s jurisdiction is permitted by law.
+
+ 
+
+3. DEFINITIONS
+3.1. The following terms shall have the meanings assigned to each:
+
+3.1.1. "Authorized Customers" Those Customers (as defined below) which have been given permission by the INFLUENCER through the Platform to: (i) access the Personal Information included in INFLUENCER’s Account (as defined below); and (ii) requests the INFLUENCER to participate in their Campaigns.
+
+3.1.2. "Campaign" refers to the marketing campaign managed through the Platform and designed by the Customer regarding its products or services that will be executed by the Influencer (as defined below);
+
+3.1.3. "Campaign Parameters" mean the requirements for the Campaign, such as budget, target audience and duration submitted through the Platform.
+
+3.1.4. "Campaign Content" means all commercial content and advertising material contained in the Campaign created by the Influencer promoting a Customer’s products or services, including, but not limited to, texts, photographs, videos, links and other audiovisual or sound contents;
+
+3.1.5. "Confidential Information" shall be considered to be any information verbally, in writing or by any other tangible or intangible means, currently known or which could be invented in the future, classified as confidential, as well as any data or information to which the parties have access by virtue of the Services (as defined below) which is to be understood, exercising reasonable business judgment, to be of confidential nature; especially information, business operations, commissions, prices and the Parties' own data, to which they have had access during the Services described in these General Terms for Influencers.
+
+3.1.6. "Customer" means companies which owns the products and services which will be object of a Campaign (as defined below) where the INFLUENCER may participate.
+
+3.1.7. "Effective Date" is the date when the INFLUENCER creates an Account through the Platform;
+
+3.1.8. "Personal Data" means any information relating to an identified or identifiable individual protected by applicable data protection regulations.
+
+3.1.9. "Platform" means the technological platform owned by INFLUENCITY through which the INFLUENCER has an active account with INFLUENCITY.
+
+3.1.10. "Services" access to the Platform and the provision of additional services as may be available at any given time.
+
+3.1.11. "Term" means the period of time during which the INFLUENCER has an active account with INFLUENCITY;
+
+3.1.12. "Website" means the http://www.influencity.com website or any of INFLUENCITY’s websites.
+
+ 
+
+4. PLATFORM AND SERVICES
+4.1. Through the Website, INFLUENCITY provides INFLUENCERS a Platform aimed at helping INFLUENCERS connect and collaborate with CUSTOMERS for the purpose of creating content and launching Campaigns.
+
+4.2. INFLUENCITY is a mere intermediary and therefore does not guarantee any result in the collaboration between INFLUENCERS and CUSTOMERS available and included in the Platform.
+
+ 
+
+5. PROCESS FOR USING THE SERVICES
+5.1. The procedure for using INFLUENCITY’s Services through the Platform is as follows:
+
+5.1.1. The INFLUENCER may register via the Platform completing the registration form available in the Website and accepting the present General Terms for Influencers.
+
+5.1.2. INFLUENCER may decide to or be required to allow the integration of the INFLUENCER’s Account with a third-party social media account (e.g., Facebook or Instagram) through a connection with third-party social media’s APIs. In relation to such integration, the INFLUENCER authorizes INFLUENCITY to obtain certain Personal Information included in INFLUENCER’s social media account, according to INFLUENCITY’s Privacy Policy.
+
+5.1.3. INFLUENCER, through its account on the Platform (“Account”), may provide additional information to complete his/her information regarding INFLUENCER’s social media accounts, location, target audience, expected fees to create content or participating in a Campaign. In connection with the additional information, the INCLUENCER commits to only provide current, complete, and accurate information and to promptly update all Account information.
+
+5.1.4. INFLUENCER may enable or disable permits to connect with the different Customers. Only Authorised Customers will be able to view the authorized information provided by the relevant social media and additional information included in INFLUENCER’s Account and send requests to participate in Authorised CUSTOMERS’ Campaigns.
+
+5.1.5. INFLUENCER may receive requests to connect with other Customers of Influencity to gain access to the benefits of Authorised Customers. INFLUENCER may accept or reject any request to connect and manage all permissions.
+
+5.1.6. The details of any Campaign accepted by the INFLUENCER will need to be reflected in a collaboration agreement or other kind of contract between CUSTOMER and the Influencer. INFLUENCITY will, in no case, be a part of or intervene in any way in the agreements reached by INFLUENCER and the Customer.
+
+5.1.7. INFLUENCER and the Customer may use the Platform to manage the execution of the Campaign, using the different functions the Platform offers at any given time.
+
+ 
+
+6. TERM AND TERMINATION
+6.1. Term. The term of these General Terms for Influencers will commence upon the Effective Date and will continue until INFLUENCER’s Account is cancelled directly by the INFLUENCER or by INFLUENCITY according to these General Terms for Influencers.
+
+6.2. Termination.
+
+6.2.1. INFLUENCER may cease or discontinue the use of the Services, and cancel their Account at any time.
+
+6.2.2. INFLUENCITY reserves the right to modify or discontinue, temporarily or permanently, the Services (or any part thereof) immediately at any time and with or without cause (including, without any limitation, for breach of these General Terms of Service).
+
+ 
+
+7. GRANT OF RIGHTS AND INTELLECTUAL PROPERTY
+7.1. Ownership of the Platform. The Platform and Services are owned and operated by INFLUENCITY. Any and all Influencity Content contained in or made available through the Platform and Services are proprietary to INFLUENCITY, its affiliates and/or third-party licensors. None of the exploitation rights recognized by the current legislation on intellectual property on the same may be understood to have been transferred to the INFLUENCER or any other person.
+
+7.2. Right to access and use the Platform. Subject to INFLUENCER’s compliance with these General Terms for Influencers and during the Term, INFLUENCER may access and use the Services, including access and use the Platform, for INFLUENCER’s own business purposes. The rights granted to the INFLUENCER in this Section 7.2. are non-exclusive, non-sublicensable and non-transferable.
+
+7.2.1. Restrictions. Except as otherwise expressly permitted in these General Terms for Influencers, the INFLUENCER shall not: (a) impersonate any person; (b) reverse engineer, decompile, disassemble, or otherwise seek to obtain or derive the source code, underlying ideas, algorithms, file formats or non-public APIs to the Services, as well as translate, modify or create derivative works of the Platform, the Services or any part thereof, except to the extent permitted by applicable law; (c) copy/reproduce, lend, sell, rent, sublicense, broadcast, distribute, edit, transfer to third parties or provide access to the Platform, as well as adapt the Services or any part thereof in any way; (d) use the Services for the benefit of any third party; (e) use the Service for any commercial purpose or into a product or service INFLUENCER provides to third parties; (f) circumvent, modify, remove, delete, alter or otherwise tamper with any security, encryption or other technology or program that is part of the Services; (g) access or use the Platform or Services for the purpose of competitive analysis or building a similar or competitive product or service; (h) engage in any unlawful or illegal activities, including unsolicited advertising and spam; (i) create, collect, transmit, store, use or process any data through the Platform that violates any applicable laws, or infringes intellectual property rights or other rights of any third party; (j) introduce or disseminate content or software (viruses and malware) that may cause damage to the computer systems of INFLUENCITY, its technology service providers or third party users; or (h) encourage or assist any third party to do any of the foregoing.
+        </div>
+        <div id="influencer-privacy" style="display:none;">
+            <h2>Influencers Privacy</h2>
+            <p><strong>Last modified:</strong> November 9th, 2024</p>
+            LIST OF CONTENTS
+In this Privacy Policy for Influencers you will find all the information related to personal data processing and your right to maintain control over them. You will find information about:
+
+Who is the data controller for processing your data.
+
+Which are the requirements for providing us with your personal data.
+
+What data processing we carry out through the Website and what are its main characteristics:
+
+What data is collected and how it is collected.
+
+Purposes for the processing of your personal data.
+
+What is the legal ground for the data processing.
+
+How long data is kept.
+
+To whom do we disclose your personal information.
+
+Existence of transfers of your data to third countries.
+
+Which rights you have and how you can exercise them.
+
+How we guarantee the confidentiality of your information.
+
+Modifications to this policy.
+
+ 
+
+1. WHO IS THE DATA CONTROLLER FOR PROCESSING YOUR PERSONAL DATA?
+Your personal data will be processed by the company INFLUENCITY, S.L. ("INFLUENCITY"), with Tax Identification Number ESB98684574 and contact details are as follows:
+
+ 
+
+Address: Calle Ribera 1, Entlo. 1 y 2, Valencia, 46002, España
+
+Contact email: legal@influencity.com
+
+ 
+
+Influencity’s role as a Data Processor:
+
+Regarding the personal information included by our Customers when using our Platform and Services (excluding data for which Influencity is the controller), INFLUENCITY will process such data as a data processor, acting on behalf of that Customer.
+
+Regarding Influencity’s processing of your personal data as a processor, this Privacy Policy for Influencers will not apply, and the Customer will be in that case responsible to inform you about its privacy practices and the processing of your personal data.
+
+ 
+
+2. WHAT ARE THE REQUIREMENTS FOR PROVIDING US WITH YOUR PERSONAL DATA?
+2.1. Minimum age. To provide us with your personal data, you must be at least 18 years of age, and/or have sufficient legal capacity to use this Website.
+
+2.2. Truthfulness. When you provide us with your data in order to use our services, you guarantee that the data and information provided is real, truthful, up to date and belongs to you and not to third parties.
+
+In addition, you must notify us of any changes that occur in the data provided, in any case, responding to the veracity and accuracy of the data provided at all times.
+
+2.3. Age and Veracity Control. INFLUENCITY reserves the right to verify your age and identifying information at any time, if necessary, including by requiring official proof of age or equivalent procedure and, in the event of fraud detection that proves or is suspected that you are under the age indicated, to delete, temporarily disable and/or terminate your account.
+
+ 
+
+3. WHAT DATA PROCESSING DO WE CARRY OUT THROUGH THE WEBSITE AND WHAT ARE ITS MAIN CHARACTERISTICS?
+Below, we explain how we process your personal information and provide you, in detail, with all relevant information regarding your privacy:
+
+ 
+
+What are the data collection methods? We gather publicly available information obtained directly or indirectly via various data sources such as social media networks and other sources; and/or Registration form and use of the Platform.
+
+What data do we collect? The publicly available information may include Identifying and contact information. We collect your identifying information (name, username), publicly available information regarding your social network profile and any other information made manifestly public.
+
+When registering through our Platform, we may collect the same information as well as email address and password, and other identifying information you may include in your account voluntarily (gender, telephone number, date of birth, link to your social media accounts, rates for posting and creating content, profile description and images).
+
+You may also be required to give us permission to collect personal information from your social media accounts via API.
+
+Profiling: We collect and produce profiles about you as an influencer to create a classification based on: your reach (number of followers, audience, etc.); the context of your followers (country, demographic information, industry, activities or products you create content about, potential target audience) and other significant variables in relation to the social networks you are present on.
+
+What are the purposes of the processing of your personal data? When registering in our Platform, we’ll process your data to manage your account and give you access to different functionalities available.
+
+The main purpose for processing your personal data, through your account, is to allow our customers to find Influencers who may fit their values, public target and other requirements and help them connect with Influencers to create and manage marketing campaigns.
+
+You may also be able to manage permissions for our various customers through your account, so that they can (i) view your personal information added to your account; (ii) contact you; and (iii) offer you to participate in their campaigns.
+
+Take into account that our customers may use your personal information and data according to their own privacy policy.
+
+What is the legitimacy basis that allows us to process your data? Is it mandatory to provide these data? We collect and process your personal information based on our legitimate interests to enable our customers and you as an influencer to connect and create marketing campaigns. There is a mutual benefit to both companies and influencers when providing a channel for you to meet and communicate with each other through our platform. For more information regarding the balancing of legitimate interests in this case, please, contact us at legal@influencity.com.
+
+If you request to register and be included on our Platform, we collect and process your Personal Data and access to the information included in your social media account with your consent or for the performance of a contract (i.e. the terms of use applicable to influencers available at https://influencity.com/legal/legal-stuff ).
+
+How long do we keep your information? All your personal information will be processed during the time it is necessary to fulfill the purposes indicated above. We may retain your personal information for longer if it may be the subject of a legal claim, or may otherwise be relevant for future litigation.
+
+ 
+
+Website Navigation (cookies)
+
+We use cookies or other tracking and tracing tools on this Website to collect information about how users use the Website.
+
+For more information about how we use these tracking tools, please visit our Cookie Policy.
+
+ 
+
+4. TO WHOM DO WE DISCLOSE YOUR PERSONAL INFORMATION?
+In general, INFLUENCITY will not communicate your data to third parties. However, in addition to the transfers that we specifically indicate in the section in which we explain the characteristics of the different operations (point 3), we inform you of the communications that we can make, in general, and that affect all previous treatments and their legitimate grounds.
+
+i. Customers, certain personal information will be available to our customers so they can evaluate your suitability to participate in their campaigns. This information may include your name, public information of your social media account(s), and related estimated statistics.
+
+ii. Service Providers, (for example, hosting companies or platforms for sending commercial communications). Notwithstanding the foregoing, these entities have signed the corresponding confidentiality agreements and will only process your data according to our instructions, and not being able to use them for their own purposes or apart from the service they provide us.
+
+The current list of processors is included in the following link: https://influencity.com/legal/sub-processors-list
+
+iii. Public Bodies. We may disclose to the competent public authorities the data and any other information in our possession or accessible through our systems when there is a legal obligation to do so, as well as when required, for example, when the purpose is to prevent or prosecute abuse of services or fraudulent activities through our Website or web page. In such cases, the personal data you provide to us would be kept and made available to administrative or judicial authorities.
+
+iv. In the event of a corporate transaction: In the event of a merger, acquisition, sale of all or part of its assets, or any other type of corporate transaction involving a third party, we may share, disclose or transfer user data to the successor entity (including during the pre-transaction phase).
+
+v. To third parties after aggregation or anonymization: We may disclose or use aggregated or anonymized data (i.e., data that cannot be linked to an identified or identifiable natural person) for any purpose.
+
+vi. To third parties with your consent or other legitimate basis: In the event that we want to share data with third parties outside the scope of this Privacy Policy, we will always seek your consent or inform you of your consent and legitimate basis.
+
+We also inform you that this Privacy Policy only refers to the collection, processing and use of information (relating to personal data) by us through your interaction with our Website. Access to third party websites that you may access through links from the Website have their own privacy policies over which we have no control. Therefore, before you provide them with any personal information, we recommend that you read their privacy policies.
+
+ 
+
+5. ARE YOUR PERSONAL DATA TRANSFERRED TO THIRD COUNTRIES OUTSIDE THE ECONOMIC AREA?
+Some of our service providers are located in countries outside the European Economic Area ("EEA").
+
+The location of these companies outside the EEA implies the existence of an international transfer of your personal data, which could lead to a lower level of protection than that provided for in European legislation. However, INFLUENCITY has implemented measures to ensure that such transfers do not result in a lower level of protection of your personal data.
+
+In this regard, service providers outside the EEA have signed the corresponding standard contractual clauses approved by the European Commission ("STC"), an agreement signed between the two entities by which the non-EU company guarantees that it applies European data protection standards.
+
+Therefore, the use of these providers does not result in a lesser degree of protection of your personal data than the use of providers located in the European Union. You can consult the content of the TCHs in the following link: https://ec.europa.eu/info/law/law-topic/data-protection/publications/standard-contractual-clauses-controllers-and-processors_en
+
+ 
+
+6. WHAT ARE THE RIGHTS YOU CAN EXERCISE AS A DATA SUBJECT AND HOW CAN YOU EXERCISE THEM?
+You can exercise the rights that the law guarantees you in relation to the processing of your personal data by contacting us via email at legal@influencity.com.
+
+Any claim we receive will be resolved as soon as possible and, in any event, within the maximum time limit established by law from the time we receive it. In some cases, it may be necessary to ask for a copy of your identity document or other identification document if we need to verify your identity.
+
+The rights that correspond to you as an interested party are the following:
+
+i. Right to withdraw consent given
+
+You can revoke your consent in connection with all processing based on it. However, we remind you that the withdrawal of consent will not affect the lawfulness of processing based on consent prior to withdrawal.
+
+ii. Right of access
+
+You have the right to know what data is being processed, if any, and, if so, to obtain a copy of it, as well as to obtain information relating to:
+
+the origin and recipients of the data;
+
+the purposes for which they are processed;
+
+whether there is an automated decision-making process, including profiling;
+
+the data retention period; and
+
+the rights provided for by law.
+
+iii. Right of rectification
+
+You have the right to request the deletion of your personal data if it is no longer necessary for the purpose for which it was collected or if we are no longer authorised to process it.
+
+iv. Right of Withdrawal
+
+You have the right to request the deletion of your personal data if it is no longer necessary for the purpose for which it was collected or, as the case may be, if we are no longer authorised to process it.
+
+v. Right to data portability
+
+You have the right to request data portability in the case of the processing of your data based on your consent or the execution of a contract, as well as when the processing is carried out by automated means. If you exercise this right, you will receive your personal data in a structured format, commonly used and readable by any electronic device. However, you can also request, where possible, that your data be transmitted directly to another company.
+
+vi. Right to limit the treatment of your personal data
+
+You have the right to limit the processing of your data in the following cases:
+
+a) When you have requested the rectification of your personal data during the period in which we verify the accuracy of them.
+
+b) When you consider that we are not authorized to process your data. In that case, you can ask us to limit its use instead of requesting its deletion.
+
+c) When you consider that it is no longer necessary for us to continue processing your data and you want us to keep them for the purpose of exercising or defending claims.
+
+d) In cases where there is processing based on our legitimate interest and you have exercised your right to object, you may ask us to restrict the use of your data during the verification of the prevalence of such interests over yours.
+
+vii. Right to object
+
+You have the right to object at any time to the processing of your personal data based on our legitimate interest, including profiling.
+
+viii. Right to lodge a complaint with the Supervisory Authority
+
+Remember that, at any time, and in the event that you consider that we have violated your right to the protection of your data, you will be able to lodge a complaint with the corresponding Control Authority in Data Protection, in the case of Spain, the Spanish Data Protection Agency (http://www.agpd.es).
+
+ix. Information from your social media
+
+Influencity uses authorized data from Instagram, YouTube, Google, Facebook, Instagram, LinkedIn, Twitter, and other platforms (“Social Platforms”). Such data is collected and stored to power Influencity features. You can request your authorized data be deleted from Influencity by contacting legal@influencity.com. For example, Influencity uses YouTube, Google, Facebook, Instagram, LinkedIn, Twitter, and other Social Platforms’ APIs to collect authorized data. You can learn more about each respective Social Platform’s terms of service and privacy policies via the links below:
+
+Social Platforms Terms of Service:
+
+Google: https://www.google.com/intl/en/policies/terms/
+
+YouTube: https://www.youtube.com/t/terms
+
+YouTube API Client: https://developers.google.com/youtube/terms/api-services-terms-of-service
+
+Facebook: https://www.facebook.com/legal/terms
+
+Instagram: https://help.instagram.com/478745558852511
+
+Twitter: https://twitter.com/en/tos
+
+LinkedIn: https://www.linkedin.com/legal/user-agreement
+
+Social Platforms Privacy Policies:
+
+Google & YouTube: http://www.google.com/policies/privacy
+
+Facebook: https://www.facebook.com/privacy/explanation
+
+Instagram: https://help.instagram.com/155833707900388
+
+Twitter: https://twitter.com/en/privacy
+
+LinkedIn: https://www.linkedin.com/legal/privacy-policy
+
+You can also withdraw INFLUENCITY’s permission to access your data from social media platforms at any time via each respective social media platform’s setting. Consider that, by withdrawing your authorization, your experience in our Platform may be limited and certain functionalities will be removed.
+
+YouTube & Google: https://security.google.com/settings/security/permissions
+
+Facebook: https://www.facebook.com/settings?tab=applications
+
+Instagram: https://www.instagram.com/accounts/manage_access/
+
+Twitter: https://twitter.com/settings/applications
+
+LinkedIn: https://www.linkedin.com/psettings/permitted-services
+
+Subject to legal and other permissible considerations, we will make every reasonable effort to honor your request promptly or inform you if we require further information in order to fulfill your request. When processing your request, we may ask you for additional information to confirm your identity and for security purposes, before disclosing the Personal Data requested to you. We reserve the right to charge a fee where permitted by law, for instance, if your request is manifestly unfounded or excessive. In the event that your request would adversely affect the rights and freedoms of others (for example, would impact the duty of confidentiality we owe to others) or if we are legally entitled to deal with your request in a different way than initially requested, we will address your request to the maximum extent possible, all in accordance with applicable law.
+        </div>
+        
+    </main>
+    </main>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Your Company Name. All rights reserved. | <a href="#privacy-policy">Privacy Policy</a> | <a href="#cookies-policy">Cookies Policy</a></p>
+        <p>&copy; 2024 DigitalDOse. All rights reserved. | 
+           <a href="#privacy-policy" onclick="showContent('privacy-policy')">Privacy Policy</a> | 
+           <a href="#cookies-policy" onclick="showContent('cookies-policy')">Cookies Policy</a>
+        </p>
     </footer>
 
-    <!-- JavaScript to control dropdown functionality -->
+    <!-- JavaScript for Content Toggle -->
     <script>
-        document.querySelectorAll('.dropdown-button').forEach(button => {
-            button.addEventListener('click', () => {
-                const dropdown = button.parentElement;
-                dropdown.classList.toggle('open');
-
-                // Close other dropdowns
-                document.querySelectorAll('.dropdown').forEach(otherDropdown => {
-                    if (otherDropdown !== dropdown) {
-                        otherDropdown.classList.remove('open');
-                    }
-                });
-            });
-        });
-
-        function toggleContent(sectionId) {
-            const sections = document.querySelectorAll('.content-section');
-            sections.forEach(section => {
-                section.style.display = section.id === sectionId ? 'block' : 'none';
-            });
+        function showContent(sectionId) {
+            // Hide all content sections
+            document.querySelectorAll('.content > div').forEach(div => div.style.display = 'none');
+            // Show selected content section
+            document.getElementById(sectionId).style.display = 'block';
         }
+        // Show default content on page load
+        document.addEventListener("DOMContentLoaded", () => {
+            showContent('privacy-policy');
+        });
     </script>
 </body>
 </html>
